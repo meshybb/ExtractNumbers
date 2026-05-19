@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 # Ensure we can import the data loaders from the local directory
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from data import svhn, race_numbers, handwritten, ocr_trains
+from data import download_icdar_svt, download_dstext_v2, download_bovtext, download_moving_mnist, download_roadtext
 
 def _safe_rmtree(path, base_dir, label):
     """Remove *path* only when it is a real directory inside *base_dir*."""
@@ -35,7 +36,12 @@ def main():
         help="Delete existing processed data before running.",
     )
     parser.add_argument("--limit", type=int, default=None, help="Limit samples per dataset.")
-    parser.add_argument("--datasets", nargs="+", default=["svhn", "race_numbers", "handwritten", "ocr_trains"], help="Datasets to process.")
+    parser.add_argument(
+        "--datasets",
+        nargs="+",
+        default=["svhn", "race_numbers", "handwritten", "ocr_trains", "icdar_svt", "dstext_v2", "bovtext", "moving_mnist", "roadtext"],
+        help="Datasets to process.",
+    )
     parser.add_argument("--no-augment", action="store_true", help="Skip the high-level augmentation phase.")
     args, unknown = parser.parse_known_args()
 
@@ -63,6 +69,21 @@ def main():
 
     if "ocr_trains" in args.datasets:
         ocr_trains.prepare(output_dir, limit=args.limit)
+
+    if "icdar_svt" in args.datasets:
+        download_icdar_svt.main()
+
+    if "dstext_v2" in args.datasets:
+        download_dstext_v2.main()
+
+    if "bovtext" in args.datasets:
+        download_bovtext.main()
+
+    if "moving_mnist" in args.datasets:
+        download_moving_mnist.main()
+
+    if "roadtext" in args.datasets:
+        download_roadtext.main()
 
 
     if not args.no_augment:
