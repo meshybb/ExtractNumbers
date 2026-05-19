@@ -349,3 +349,70 @@ The generated dashboard and detailed error analysis are captured in the evaluati
 These improvements have been integrated into both the main inference script (`predict_single.py`) and the evaluation pipelines (`eval_pipeline.py`, `eval_global_bbox.py`, `eval_individual_bbox.py`).
 
 ---
+
+## 🟢 Stage 6: Slurm Resilience & Checkpoint Resuming
+
+**Focus:** Building a highly resilient training architecture to prevent losses when running on cloud resources or Slurm jobs with time limits.
+
+*   **Robust Checkpoint Resumption (Sentinel System):** Upgraded both `globalbb_detector.py` and `individualbb_detector.py` with a highly robust resumption check based on a completion sentinel file (`train_completed.txt`).
+    *   Previously, running the training pipeline with `--force-train` would unconditionally delete the previous run directory (and `last.pt`), meaning that resubmitting a timed-out or interrupted training run would lose all epoch progress and restart from 0.
+    *   The new system detects interrupted training sessions (where `last.pt` exists but the `train_completed.txt` sentinel is missing). In this state, it bypasses folder deletion and automatically resumes training from the last saved epoch—saving hours of GPU execution.
+    *   A completed training run creates the `train_completed.txt` sentinel, ensuring that subsequent retraining attempts correctly start fresh if `--force-train` is specified.
+*   **Force-Restart Control:** Integrated a `--force-train` cleanup mechanism that deletes past completed run directories, ensuring clean training runs when users explicitly specify retraining from scratch.
+*   **GPU Infrastructure Addition:** Created a new generic GPU Slurm configuration in `slarm_code/run_generic_gpu.slurm` requesting GPU allocation (`#SBATCH --gres=gpu:1`), allowing generic jobs to run on NVIDIA L4 GPUs, while keeping the original CPU-only script `run_generic.slurm` intact.
+
+---
+
+## 🟢 Stage 7: Proportional Stratified Sampling & Model Retraining
+
+**Focus:** Retraining the entire object detection pipeline (both global and individual digit models) for 25 epochs and benchmarking under a proportional stratified sampling strategy to ensure balanced, realistic metrics.
+
+*   **Training Progress:**
+    *   **Global Bounding Box Model:** Validation mAP50 reached **97.33%** (Precision: 95.76%, Recall: 94.53%) at epoch 25, a massive step up from 91.87% at epoch 1.
+    *   **Individual Bounding Box Model:** Validation mAP50 reached **99.30%** (Precision: 98.53%, Recall: 98.51%) at epoch 25, indicating near-perfect digit localization.
+*   **Abolishing Enhancements Confirmed:** Direct end-to-end evaluation validates that bypassing the upscaling/sharpening step (`none`) achieves better overall sequence accuracy (84.17%) than using ESRGAN (83.65%), while completely eliminating the 7.1-second latency bottleneck per image.
+
+### 📈 Full Pipeline Performance Comparison (Raw/None Enhancement)
+
+| Metric | Old Network (Stage 4) | New Network (Stage 7) | Difference (Delta) |
+| :--- | :--- | :--- | :--- |
+| **Full Sequence Accuracy** | 68.00% | **84.17%** | **+16.17%** ⬆️ |
+| **Mean Digit Accuracy (Pos)** | 80.62% | **91.04%** | **+10.42%** ⬆️ |
+| **Stage 1 (Global) Mean IoU** | 0.7612 | **0.8046** | **+0.0434** ⬆️ |
+| **Stage 3 (Individual) Mean IoU** | 0.7585 | 0.7355 | -0.0230 |
+
+### 📊 Performance by Category (Raw/None Enhancement)
+
+| Category | Metric | Old Network (Stage 4) | New Network (Stage 7) | Difference (Delta) |
+| :--- | :--- | :--- | :--- | :--- |
+| **Handwritten** | Full Seq Accuracy | 56.40% | **69.39%** | **+12.99%** ⬆️ |
+| | Mean Digit Accuracy | 73.59% | **85.99%** | **+12.40%** ⬆️ |
+| | Stage 1 Mean IoU | 0.7183 | **0.7895** | **+0.0712** ⬆️ |
+| | Stage 3 Mean IoU | 0.7759 | 0.7703 | -0.0056 |
+| **SVHN** | Full Seq Accuracy | 79.60% | **84.54%** | **+4.94%** ⬆️ |
+| | Mean Digit Accuracy | 87.65% | **91.17%** | **+3.52%** ⬆️ |
+| | Stage 1 Mean IoU | 0.8040 | **0.8050** | **+0.0010** ⬆️ |
+| | Stage 3 Mean IoU | 0.7423 | 0.7346 | -0.0077 |
+
+### 📈 Full Pipeline Performance Comparison (ESRGAN Enhancement)
+
+| Metric | Old Network (Stage 4) | New Network (Stage 7) | Difference (Delta) |
+| :--- | :--- | :--- | :--- |
+| **Full Sequence Accuracy** | 68.60% | **83.65%** | **+15.05%** ⬆️ |
+| **Mean Digit Accuracy (Pos)** | 81.39% | **90.78%** | **+9.39%** ⬆️ |
+| **Stage 1 (Global) Mean IoU** | 0.7612 | **0.7977** | **+0.0365** ⬆️ |
+| **Stage 3 (Individual) Mean IoU** | 0.7616 | 0.7440 | -0.0176 |
+
+> **Conclusion:** The retrained models represent a massive evolutionary step for the OCR pipeline. Full sequence accuracy surged from 68.00% to **84.17%**, driven by substantial gains in digit-level classification (91.04%) and global box localization (0.8046 IoU). Bypassing image enhancement remains the optimal choice for speed and high accuracy.
+
+---
+
+## 🟢 Stage 8: Visualization Automation & Slurm Headless Execution
+
+**Focus:** Modernizing downstream evaluation and visualization components to ensure they run robustly, fail-safe, and unattended in high-performance computing environments.
+
+*   **Robust Matplotlib Backend Auto-Switching:** Configured `visualize_globalbb_results.py` to auto-detect if X11 forwarding / graphical displays are absent (e.g. inside headless Slurm worker nodes where the `DISPLAY` environment variable is not defined) and switch to the non-interactive `Agg` backend to avoid tkinter/display startup crashes.
+*   **Dynamic Output Path Auto-Detection:** Enhanced the script to dynamically determine target data directories (looking for `outputs/yolo_runs` where Stage 7 model prediction files live, with a graceful fallback to `outputs/bbox_comparison`).
+*   **Unified CLI Interface:** Equipped the visualization pipeline with a robust argparse structure (adding `--output-dir` support), matching the exact calling convention triggered automatically at the tail end of our comprehensive `train_pipeline.py` orchestrator.
+
+---

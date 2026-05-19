@@ -91,6 +91,8 @@ def main():
                 print("=> Found existing GlobalBB weights. Running inference (unless cached)...")
             else:
                 print("=> No GlobalBB weights found or force-train enabled. Starting training...")
+                if args.force_train:
+                    detector_args.append("--force-train")
 
             if not run_python_script(detector_script, detector_args, capture=False):
                 print("Failed at Stage 1 detection.")
@@ -158,6 +160,8 @@ def main():
             print("=> Found existing IndividualBB weights. Loading model...")
         else:
             print("=> Starting IndividualBB model training...")
+            if args.force_train:
+                indiv_args.append("--force-train")
 
         # Use capture=False so user sees the YOLO training bars
         if not run_python_script(indiv_script, indiv_args, capture=False):

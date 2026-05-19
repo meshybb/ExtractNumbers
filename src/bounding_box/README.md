@@ -12,4 +12,4 @@ The `individualbb_detector.py` script trains a model to localize individual digi
 - `globalbb_detector.py`: Training and inference logic for Stage 1.
 - `individualbb_detector.py`: Training and inference logic for Stage 3.
 - `run_globalbb_flow.py`: Orchestrates Stage 1 training and data conversion.
-- `visualize_globalbb_results.py`: Visualizes detection performance.
+- `visualize_globalbb_results.py`: Visualizes detection performance on test split. Supports dynamic directory detection (`outputs/yolo_runs` / `outputs/bbox_comparison`), `--output-dir` custom configurations, and headless environment execution (e.g., Slurm/Agg backend).

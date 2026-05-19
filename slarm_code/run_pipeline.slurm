@@ -26,6 +26,6 @@ cd /home/dsi/halamim1/ExtractNumbers
 source .venv/bin/activate
 
 # Run the pipeline script
-python src/training/train_pipeline.py
+python src/training/train_pipeline.py "$@"
 
 echo "Job completed at $(date)"

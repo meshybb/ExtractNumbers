@@ -1,35 +1,58 @@
+import os
+import sys
+
+# Configure Matplotlib backend for headless environments
+import matplotlib
+if 'DISPLAY' not in os.environ:
+    matplotlib.use('Agg')
+
 import pandas as pd
 import cv2
 import matplotlib.pyplot as plt
-import os
-import sys
+import numpy as np
+import argparse
+
+# Path configuration
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 if os.path.join(BASE_DIR, "src") not in sys.path:
     sys.path.append(os.path.join(BASE_DIR, "src"))
 
-import numpy as np
-
-# Path configuration
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-CSV_PATH = os.path.join(BASE_DIR, "outputs", "bbox_comparison", "globalbb_predictions.csv")
-VAL_IMAGES_DIR = os.path.join(BASE_DIR, "outputs", "bbox_comparison", "globalbb_dataset", "images", "val")
-OUTPUT_IMAGE = os.path.join(BASE_DIR, "outputs", "bbox_comparison", "globalbb_comparison_summary.png")
-
 def main():
-    if not os.path.exists(CSV_PATH):
-        print(f"Error: Could not find CSV at {CSV_PATH}")
+    parser = argparse.ArgumentParser(description="Visualize GlobalBB prediction results on test split.")
+    parser.add_argument("--output-dir", type=str, default=None,
+                        help="Directory containing predictions and dataset splits (default: autodetect outputs/yolo_runs or outputs/bbox_comparison)")
+    args = parser.parse_args()
+
+    # Determine paths dynamically
+    if args.output_dir:
+        output_dir = args.output_dir
+    else:
+        # Autodetect based on which folder actually exists
+        yolo_runs_path = os.path.join(BASE_DIR, "outputs", "yolo_runs")
+        bbox_comparison_path = os.path.join(BASE_DIR, "outputs", "bbox_comparison")
+        if os.path.exists(yolo_runs_path):
+            output_dir = yolo_runs_path
+        else:
+            output_dir = bbox_comparison_path
+
+    csv_path = os.path.join(output_dir, "globalbb_predictions.csv")
+    val_images_dir = os.path.join(output_dir, "globalbb_dataset", "images", "val")
+    output_image = os.path.join(output_dir, "globalbb_comparison_summary.png")
+
+    if not os.path.exists(csv_path):
+        print(f"Error: Could not find CSV at {csv_path}")
         return
     
-    if not os.path.exists(VAL_IMAGES_DIR):
-        print(f"Error: Val directory not found. Please run training first.")
+    if not os.path.exists(val_images_dir):
+        print(f"Error: Val directory not found at {val_images_dir}. Please run training first.")
         return
 
     # 1. Load prediction results.
-    df = pd.read_csv(CSV_PATH)
+    df = pd.read_csv(csv_path)
     
     # 2. Keep only samples that exist in the validation split.
     # Validation filenames follow: category_id.jpg (e.g., natural_10.jpg).
-    val_filenames = set(os.listdir(VAL_IMAGES_DIR))
+    val_filenames = set(os.listdir(val_images_dir))
     
     def is_test_image(row):
         # Extract the sample index (the part after '/').
@@ -42,7 +65,7 @@ def main():
 
     print(f"Filtering complete: Found {test_df['image_path'].nunique()} unique test images.")
 
-    categories = ['natural', 'synthetic', 'handwritten']
+    categories = ['svhn', 'race_numbers', 'handwritten']
     samples_per_cat = 2
     
     fig, axes = plt.subplots(len(categories), samples_per_cat, figsize=(10, 8))
@@ -85,9 +108,14 @@ def main():
             ax.axis('off')
 
     plt.suptitle("GlobalBB Final Test Results (Unseen Data)\nGreen = Truth | Red = Prediction", fontsize=10)
-    plt.savefig(OUTPUT_IMAGE, bbox_inches='tight')
-    print(f"Test visualization saved to: {OUTPUT_IMAGE}")
-    plt.show()
+    plt.savefig(output_image, bbox_inches='tight')
+    print(f"Test visualization saved to: {output_image}")
+    
+    if 'DISPLAY' in os.environ:
+        try:
+            plt.show()
+        except Exception as e:
+            print(f"Could not display plot interactively: {e}")
 
 if __name__ == "__main__":
     main()
