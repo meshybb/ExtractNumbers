@@ -437,12 +437,30 @@ def main() -> None:
     # Train GlobalBB.
     globalbb_weights_dir = os.path.join(output_dir, "globalbb_run")
     best_pt_path = os.path.join(globalbb_weights_dir, "weights", "best.pt")
+    run_dir = os.path.join(output_dir, "globalbb_runs", "run1")
+    last_pt_path = os.path.join(run_dir, "weights", "last.pt")
+    completed_sentinel = os.path.join(run_dir, "train_completed.txt")
 
-    if (not os.path.exists(best_pt_path)) or args.force_train:
-        if os.path.exists(best_pt_path):
-            print("=> Existing weights found, but --force-train is enabled. Retraining...")
+    # Interrupted run detection: last.pt exists but completed_sentinel is missing
+    is_interrupted = os.path.exists(last_pt_path) and not os.path.exists(completed_sentinel)
+
+    if (not os.path.exists(best_pt_path)) or args.force_train or is_interrupted:
+        if is_interrupted:
+            print(f"=> Found interrupted GlobalBB training session at {last_pt_path} (checkpoint exists but not completed). Resuming...")
+            resume = True
+        elif args.force_train:
+            print("=> --force-train is enabled. Clearing previous run directories and retraining...")
+            if os.path.exists(run_dir):
+                print(f"Deleting run directory: {run_dir}")
+                shutil.rmtree(run_dir)
+            if os.path.exists(best_pt_path):
+                print(f"Deleting previous weights: {best_pt_path}")
+                os.remove(best_pt_path)
+            resume = False
         else:
             print("=> No existing weights found. Starting training...")
+            resume = False
+
         try:
             from ultralytics import YOLO  # type: ignore
         except Exception as e:
@@ -461,7 +479,11 @@ def main() -> None:
                 device = "cpu"
 
         print("Training GlobalBB detector...")
-        model = YOLO(args.globalbb_weights)
+        if resume:
+            model = YOLO(last_pt_path)
+        else:
+            model = YOLO(args.globalbb_weights)
+
         # ultralytics creates a run directory; we direct its base save_dir for stability.
         results = model.train(
             data=data_yaml_path,
@@ -473,7 +495,17 @@ def main() -> None:
             name="run1",
             exist_ok=True,
             verbose=True,
+            resume=resume,
         )
+
+        # Write training completed sentinel
+        try:
+            ensure_dir(run_dir)
+            with open(completed_sentinel, "w", encoding="utf-8") as f:
+                f.write("completed")
+            print(f"=> Training successfully completed. Sentinel written to {completed_sentinel}")
+        except Exception as e:
+            print(f"Warning: could not write completion sentinel: {e}")
 
         # best weights path is typically: runs/detect/train*/weights/best.pt
         # but we keep it resilient by checking known locations.

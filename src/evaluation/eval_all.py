@@ -21,14 +21,17 @@ def main():
     import argparse
     parser = argparse.ArgumentParser(description="Run all evaluation stages")
     parser.add_argument("--max-samples", type=int, default=100, help="Max samples for each stage")
+    parser.add_argument("--balanced", action="store_true", help="Use equal/balanced split for categories")
     args = parser.parse_args()
 
+    extra_args = ["--balanced"] if args.balanced else []
+
     stages = [
-        ("eval_global_bbox.py", ["--max-samples", str(args.max_samples)]),
-        ("eval_sharpening.py", ["--max-samples", str(args.max_samples)]),
-        ("eval_individual_bbox.py", ["--max-samples", str(args.max_samples)]),
-        ("eval_digit_recog.py", ["--max-samples", str(args.max_samples)]),
-        ("eval_pipeline.py", ["--max-samples", str(args.max_samples), "--save-viz", "--analyze-errors"])
+        ("eval_global_bbox.py", ["--max-samples", str(args.max_samples)] + extra_args),
+        ("eval_sharpening.py", ["--max-samples", str(args.max_samples)] + extra_args),
+        ("eval_individual_bbox.py", ["--max-samples", str(args.max_samples)] + extra_args),
+        ("eval_digit_recog.py", ["--max-samples", str(args.max_samples)] + extra_args),
+        ("eval_pipeline.py", ["--max-samples", str(args.max_samples), "--save-viz", "--analyze-errors"] + extra_args)
     ]
     
     success_count = 0

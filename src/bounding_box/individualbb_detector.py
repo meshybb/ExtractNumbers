@@ -155,7 +155,7 @@ def make_individualbb_dataset(
         
     return data_yaml_path
 
-def train_individualbb(data_yaml, output_dir, epochs=20, batch=16, img_size=256, device="", weights="yolov8n.pt"):
+def train_individualbb(data_yaml, output_dir, epochs=20, batch=16, img_size=256, device="", weights="yolov8n.pt", resume=False):
     def on_fit_epoch_end(trainer):
         epoch = trainer.epoch + 1
         epochs = trainer.epochs
@@ -168,7 +168,22 @@ def train_individualbb(data_yaml, output_dir, epochs=20, batch=16, img_size=256,
         map50 = metrics.get('metrics/mAP50(B)', 0)
         print(f"Epoch {epoch}/{epochs}: loss={loss:.4f}, mAP50={map50:.4f}")
 
-    model = YOLO(weights)
+    run_dir = os.path.join(output_dir, "individualbb_runs", "run1")
+    last_pt_path = os.path.join(run_dir, "weights", "last.pt")
+    completed_sentinel = os.path.join(run_dir, "train_completed.txt")
+
+    if resume and os.path.exists(last_pt_path):
+        print(f"=> Resuming training from {last_pt_path}...")
+        model = YOLO(last_pt_path)
+        actual_resume = True
+    elif os.path.exists(last_pt_path) and not os.path.exists(completed_sentinel):
+        print(f"=> Safeguard: Found interrupted training session at {last_pt_path}. Resuming...")
+        model = YOLO(last_pt_path)
+        actual_resume = True
+    else:
+        model = YOLO(weights)
+        actual_resume = False
+
     model.add_callback("on_fit_epoch_end", on_fit_epoch_end)
 
     results = model.train(
@@ -182,8 +197,19 @@ def train_individualbb(data_yaml, output_dir, epochs=20, batch=16, img_size=256,
         exist_ok=True,
         verbose=True,
         plots=False,
-        save=True
+        save=True,
+        resume=actual_resume
     )
+
+    # Write completion sentinel
+    try:
+        ensure_dir(run_dir)
+        with open(completed_sentinel, "w") as f:
+            f.write("completed")
+        print(f"=> Training successfully completed. Sentinel written to {completed_sentinel}")
+    except Exception as e:
+        print(f"Warning: could not write completion sentinel: {e}")
+
     return results
 
 def main():
@@ -209,18 +235,35 @@ def main():
     
     individual_out_root = os.path.join(args.output_dir, "individualbb_dataset")
     weights_path = os.path.join(args.output_dir, "individualbb_run", "weights", "best.pt")
+    run_dir = os.path.join(args.output_dir, "individualbb_runs", "run1")
+    last_pt_path = os.path.join(run_dir, "weights", "last.pt")
+    completed_sentinel = os.path.join(run_dir, "train_completed.txt")
+
+    # Interrupted run detection: last.pt exists but completed_sentinel is missing
+    is_interrupted = os.path.exists(last_pt_path) and not os.path.exists(completed_sentinel)
 
     if args.prepare_only:
         make_individualbb_dataset(samples, categories, individual_out_root, 0.8, 42)
         return
 
     if args.train_only:
-        if args.skip_train and os.path.exists(weights_path):
+        if args.skip_train and os.path.exists(weights_path) and not is_interrupted:
             return
         
+        if is_interrupted:
+            print(f"=> Found interrupted IndividualBB training session at {last_pt_path} (checkpoint exists but not completed). Resuming...")
+        elif args.force_train:
+            print("=> --force-train is enabled. Clearing previous run directories and retraining...")
+            if os.path.exists(run_dir):
+                print(f"Deleting run directory: {run_dir}")
+                shutil.rmtree(run_dir)
+            if os.path.exists(weights_path):
+                print(f"Deleting previous weights: {weights_path}")
+                os.remove(weights_path)
+
         data_yaml = os.path.join(individual_out_root, "data.yaml")
         if os.path.exists(data_yaml):
-            train_individualbb(data_yaml, args.output_dir, epochs=args.epochs, weights=args.weights)
+            train_individualbb(data_yaml, args.output_dir, epochs=args.epochs, weights=args.weights, resume=is_interrupted)
             
             ensure_dir(os.path.join(args.output_dir, "individualbb_run", "weights"))
             best_pt = os.path.join(args.output_dir, "individualbb_runs", "run1", "weights", "best.pt")
@@ -228,11 +271,25 @@ def main():
                 shutil.copy2(best_pt, weights_path)
         return
 
-    # Logic: Only train if weights are missing OR --force-train is specified
-    if (not os.path.exists(weights_path)) or args.force_train:
-        make_individualbb_dataset(samples, categories, individual_out_root, 0.8, 42)
+    # Logic: Only train if weights are missing OR --force-train is specified OR it is interrupted
+    if (not os.path.exists(weights_path)) or args.force_train or is_interrupted:
+        if is_interrupted:
+            print(f"=> Found interrupted IndividualBB training session at {last_pt_path} (checkpoint exists but not completed). Resuming...")
+        elif args.force_train:
+            print("=> --force-train is enabled. Clearing previous run directories and retraining...")
+            if os.path.exists(run_dir):
+                print(f"Deleting run directory: {run_dir}")
+                shutil.rmtree(run_dir)
+            if os.path.exists(weights_path):
+                print(f"Deleting previous weights: {weights_path}")
+                os.remove(weights_path)
+
+        # Only prepare dataset if we are NOT resuming
+        if not is_interrupted:
+            make_individualbb_dataset(samples, categories, individual_out_root, 0.8, 42)
+            
         data_yaml = os.path.join(individual_out_root, "data.yaml")
-        train_individualbb(data_yaml, args.output_dir, epochs=args.epochs, weights=args.weights)
+        train_individualbb(data_yaml, args.output_dir, epochs=args.epochs, weights=args.weights, resume=is_interrupted)
         
         ensure_dir(os.path.join(args.output_dir, "individualbb_run", "weights"))
         best_pt = os.path.join(args.output_dir, "individualbb_runs", "run1", "weights", "best.pt")
