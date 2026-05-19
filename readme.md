@@ -64,6 +64,11 @@ python src/training/train_pipeline.py
 python src/inference/predict_single.py path/to/image.png
 ```
 
+**To visualize the prediction pipeline on a single image:**
+```bash
+python src/inference/visualize_pipeline.py path/to/image.png -o pipeline_viz.png
+```
+
 #### Control Flags
 - `--skip-train`: Automatically skips training if valid weights already exist.
 - `--force-train`: Forces a fresh training cycle for both YOLO stages.
