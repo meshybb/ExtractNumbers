@@ -29,8 +29,8 @@ The source code is organized into specialized modules:
 * **[`src/inference/`](src/inference/README.md)**: Production prediction scripts.
 * **[`src/data/`](src/data/README.md)**: Dataset loading and normalization.
 * **[`src/bounding_box/`](src/bounding_box/README.md)**: Stage 1 & 3 YOLO detection.
-* **[`src/image_preprocessing/`](src/image_preprocessing/README.md)**: Stage 2 Real-ESRGAN enhancement.
-* **[`src/digit_recognizer/`](src/digit_recognizer/README.md)**: Stage 4 ResNet18 classification.
+* **[`src/image_preprocessing/`](src/image_preprocessing/README.md)**: Optional image preprocessing utilities.
+* **[`src/digit_recognizer/`](src/digit_recognizer/README.md)**: Stage 3 ResNet18 classification.
 * **[`src/evaluation/`](src/evaluation/README.md)**: Multi-stage benchmarking suite.
 * **[`src/utils/`](src/utils/README.md)**: Shared helper functions.
 
@@ -40,15 +40,11 @@ For a comprehensive technical reference of all scripts, see the **[Source API Do
 
 ## Pipeline Workflow
 
-The extraction process is divided into four main stages:
+The extraction process is divided into three core stages:
 
-1.  **Global Bounding-Box Detection (GlobalBB):** Localizes the entire number sequence within the noisy source image.
-2.  **Super-Resolution & Sharpening:** Implements **Real-ESRGAN** to enhance visual quality, recovery of fine details, and edge sharpening.
-
-מתי סליחה מראש🦥
-מתי סליחה מראש- אולי צריך לעדכן את שם החידוד 
-3.  **Individual Digit Localization (IndividualBB):** Detects and segments each digit individually within the sharpened crops.
-4.  **Neural Character Recognition (Classification):** ResNet18-based classification of localized digits into final values (0-9).
+1.  **Global Bounding-Box Detection (GlobalBB):** Localizes the entire number sequence within the noisy source image and extracts the crop.
+2.  **Individual Digit Localization (IndividualBB):** Detects and segments each digit individually within the cropped sequence.
+3.  **Neural Character Recognition (Classification):** ResNet18-based classification of localized digits into final values (0-9).
 
 ![Process Pipeline](assets/diagram.PNG)
 
@@ -96,70 +92,38 @@ To ensure clarity across all reports, the following metrics are used:
 
 | Category | Mean IoU | Detection Rate | mAP@0.5 |
 | :--- | :--- | :--- | :--- |
-| **Overall** | 0.7956 | 99.20% | 94.95% |
-| **Handwritten** | 0.7205 | 94.37% | 84.51% |
-| **SVHN** | 0.7992 | 99.43% | 95.43% |
+| **Overall** | **0.7977** | **99.15%** | **94.40%** |
+| **Handwritten** | 0.6670 | 84.48% | 79.31% |
+| **SVHN** | 0.8016 | 99.59% | 94.85% |
 
-### 📊 Stage 2: Image Sharpening Enhancement
-*AI-powered enhancement performance metrics.*
-מתי סליחה מראש🦥- לעדכן טאחרי הריצה החדשה
-| Metric | Result |
-| :--- | :--- |
-| **Total Processed** | 2000 samples |
-| **Average Duration** | 0.0006s |
-| **Throughput** | 5,135,519 pixels/sec |
-| **Avg Upscale Factor** | 2.00x |
-
-
-| Category | Full Seq Accuracy | Mean Digit Accuracy | Stage 1 IoU | Stage 3 IoU |
-| :--- | :--- | :--- | :--- | :--- |
-| Handwritten | — | — | — | — |
-| SVHN | — | — | — | — |
-| Synthetic | — | — | — | — |
-
-
-### 📊 Stage 3: Individual Digit Localization
-*Evaluates digit segmentation within sharpened crops.*
-
-
-מתי סליחה מראש🦥- לעדכן טאחרי הריצה החדשה
-
+### 📊 Stage 2: Individual Digit Localization
+*Evaluates digit segmentation within cropped sequences.*
 
 | Category | Mean IoU | Recall |
 | :--- | :--- | :--- |
-| **Overall** | 0.8267 | 101.24% |
-| **Handwritten** | 0.8748 | 100.77% |
-| **SVHN** | 0.8389 | 101.27% |
+| **Overall** | **0.8409** | **100.00%** |
+| **Handwritten** | 0.8688 | 100.00% |
+| **SVHN** | 0.8401 | 100.00% |
 
-### 📊 Stage 4: Digit Classification
+### 📊 Stage 3: Digit Classification
 *Isolated classification performance (ResNet18).*
-
-
-מתי סליחה מראש🦥- לעדכן טאחרי הריצה החדשה
-
-
 
 | Category | Accuracy | Support |
 | :--- | :--- | :--- |
-| **Overall** | 93.75% | 4514 digits |
-| **Handwritten** | 98.85% | - |
-| **SVHN** | 93.44% | - |
+| **Overall** | **98.99%** | **4461 digits** |
+| **Handwritten** | **99.51%** | 205 digits |
+| **SVHN** | **98.97%** | 4256 digits |
 
 ### 🏆 Full End-to-End Pipeline Performance
 *Master benchmark: Raw pixels → Final predicted string.*
 
-
-מתי סליחה מראש🦥- לעדכן טאחרי הריצה החדשה
-
-
-
-
 | Metric | Overall | Handwritten | SVHN |
 | :--- | :--- | :--- | :--- |
-| **Full Sequence Accuracy** | **70.25%** | **58.50%** | **82.00%** |
-| **Mean Digit Accuracy (Pos)**| **81.89%** | **74.33%** | **89.46%** |
-| **Stage 1 Mean IoU** | 0.7635 | 0.7226 | 0.8044 |
-| **Stage 3 Mean IoU** | 0.7629 | 0.7810 | 0.7461 |
+| **Full Sequence Accuracy** | **84.17%** | **69.39%** | **84.54%** |
+| **Mean Digit Accuracy (Pos)**| **91.04%** | **85.99%** | **91.17%** |
+| **Succession Rate** | **95.35%** | **96.70%** | **95.31%** |
+| **Stage 1 Mean IoU** | **0.8046** | **0.7895** | **0.8050** |
+| **Stage 2 Mean IoU** | **0.7355** | **0.7703** | **0.7346** |
 
 ---
 
@@ -191,15 +155,10 @@ The pipeline now supports "Weakly Labeled" datasets—data that contains global 
 ### Handling Weakly Labeled Data
 When a dataset is identified as weakly labeled (`has_digit_boxes=False` in `annotations.json`):
 1.  **Stage 1 (Global Detection)**: Evaluated as normal using Mean IoU.
-2.  **Stage 3 (Individual Detection)**: Skipped for metric calculation to avoid statistical contamination.
+2.  **Stage 2 (Individual Detection)**: Skipped for metric calculation to avoid statistical contamination.
 3.  **End-to-End Accuracy**: Calculated by comparing the final OCR output with the ground truth sequence label.
 
 ### Pipeline Progression
-
-מתי סליחה מראש🦥- לעדכן טאחרי הריצה החדשה
-
-
-
 
 ![Full Pipeline Dashboard](assets/full_pipeline_progression.png)
 
