@@ -10,23 +10,22 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 sys.path.append(os.path.join(BASE_DIR, "src"))
 
 from image_preprocessing.digit_preprocessor import enhance_digit
-from digit_recognizer.digit_recognizer import build_digit_model, get_device, preprocess_crop
+from digit_recognizer.digit_recognizer import load_classifier, get_device, preprocess_crop
 from utils.bbox_utils import merge_global_boxes, nms_individual_boxes
 
-def predict_image(image_path, model_dir):
+def predict_image(image_path, model_dir, classifier_path):
     device = get_device()
     
     # Individual model components
     GLOBAL_MODEL_PATH = os.path.join(model_dir, "globalbb.pt")
     INDIV_MODEL_PATH = os.path.join(model_dir, "individualbb.pt")
-    CLASSIFIER_PATH = os.path.join(model_dir, "digit_classifier.pth")
+    CLASSIFIER_PATH = classifier_path
     
     # Load Models
     global_model = YOLO(GLOBAL_MODEL_PATH)
     indiv_model = YOLO(INDIV_MODEL_PATH)
-    classifier = build_digit_model()
-    classifier.load_state_dict(torch.load(CLASSIFIER_PATH, map_location=device))
-    classifier.to(device).eval()
+    
+    classifier = load_classifier(CLASSIFIER_PATH, data_dir=os.path.join(BASE_DIR, "data", "digits_data"))
     
     # Read Image
     img = cv2.imread(image_path)
@@ -73,12 +72,25 @@ def predict_image(image_path, model_dir):
 
 def main():
     import argparse
+    import random
+    from pathlib import Path
+
     parser = argparse.ArgumentParser(description="Predict number in a single image.")
-    parser.add_argument("image_path", help="Path to the image file")
+    parser.add_argument("image_path", help="Path to the image file, or 'random' to pick a random image from the data directory")
     parser.add_argument("--model-dir", default=os.path.join(BASE_DIR, "outputs", "trained_models"), help="Directory containing models")
+    parser.add_argument("--classifier-path", default=os.path.join(BASE_DIR, "outputs", "trained_models", "digit_recognizer.pt"), help="Path to the trained digit classifier model")
     args = parser.parse_args()
     
-    result = predict_image(args.image_path, args.model_dir)
+    if args.image_path.lower() == "random":
+        data_dir = Path(BASE_DIR) / "data"
+        images = list(data_dir.rglob("*.jpg")) + list(data_dir.rglob("*.png"))
+        if not images:
+            print(f"Error: No images found in {data_dir}")
+            return
+        args.image_path = str(random.choice(images))
+        print(f"Randomly selected image: {args.image_path}")
+
+    result = predict_image(args.image_path, args.model_dir, args.classifier_path)
     print(f"\nFinal Predicted Number: {result}")
 
 if __name__ == "__main__":

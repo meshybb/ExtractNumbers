@@ -270,7 +270,7 @@ def main():
     parser = argparse.ArgumentParser(description="Digit recognition for GlobalBB detections")
     parser.add_argument("--globalbb-csv", default=os.path.join("outputs", "bbox_comparison", "globalbb_predictions.csv"), help="GlobalBB predictions CSV path")
     parser.add_argument("--output-dir", default=os.path.join("outputs", "bbox_comparison"), help="Output directory")
-    parser.add_argument("--model-path", default=os.path.join("outputs", "bbox_comparison", "digit_classifier.pth"), help="Saved digit classifier weights")
+    parser.add_argument("--model-path", default=os.path.join("outputs", "bbox_comparison", "digit_recognizer.pt"), help="Saved digit classifier weights")
     parser.add_argument("--classification-data", default=os.path.join("data", "digits_data"), help="Unified digits_data directory")
     parser.add_argument("--epochs", type=int, default=3, help="Epochs to train digit classifier when missing")
     parser.add_argument("--batch-size", type=int, default=64, help="Batch size for training")
