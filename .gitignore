@@ -1,7 +1,8 @@
 .venv
 __pycache__/
 *.pyc
-outputs
+outputs/*
+!outputs/trained_models/
 slurm_logs/
 Mati_TODO 
 # Models
