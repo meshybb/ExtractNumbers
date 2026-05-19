@@ -17,6 +17,7 @@ def main():
     parser = argparse.ArgumentParser(description="Stage 2: Sharpening/Enhancement Evaluation")
     parser.add_argument("--max-samples", type=int, default=100)
     parser.add_argument("--save-crops", action="store_true", help="Save sharpened crops for inspection")
+    parser.add_argument("--balanced", action="store_true", help="Use equal/balanced split for categories")
     args = parser.parse_args()
 
     # Paths
@@ -38,11 +39,17 @@ def main():
         
     eval_samples = []
     if samples_by_cat:
-        total_samples = sum(len(s) for s in samples_by_cat.values())
-        for cat, samps in samples_by_cat.items():
-            random.shuffle(samps)
-            num_samples = max(1, int(round(args.max_samples * (len(samps) / total_samples))))
-            eval_samples.extend(samps[:num_samples])
+        if args.balanced:
+            target_per_cat = args.max_samples // len(samples_by_cat)
+            for cat, samps in samples_by_cat.items():
+                random.shuffle(samps)
+                eval_samples.extend(samps[:min(target_per_cat, len(samps))])
+        else:
+            total_samples = sum(len(s) for s in samples_by_cat.values())
+            for cat, samps in samples_by_cat.items():
+                random.shuffle(samps)
+                num_samples = max(1, int(round(args.max_samples * (len(samps) / total_samples))))
+                eval_samples.extend(samps[:num_samples])
         random.shuffle(eval_samples)
     
     results = []

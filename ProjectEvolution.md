@@ -416,9 +416,11 @@ These improvements have been integrated into both the main inference script (`pr
 
 ## 🏁 Phase 4 Final Summary: End-to-End Pipeline Performance
 
-With the conclusion of all training and evaluation runs on the new network, the final end-to-end pipeline metrics under proportional stratified sampling (with `none` enhancement/raw input) represent the peak evolutionary state of the OCR system:
+With the conclusion of all training and evaluation runs on the new network, the final end-to-end pipeline metrics represent the peak evolutionary state of the OCR system. Below are the results under both the proportional (natural) sampling and the balanced sampling distributions.
 
-### 📈 Current End-to-End Pipeline Performance (Phase 4 Final)
+### 📈 Proportional End-to-End Pipeline Performance (Phase 4 Final - Default)
+
+This table represents the performance under proportional stratified sampling based on the real dataset skew (SVHN vs. Handwritten), showing how the model performs on the natural distribution of the repository (dominated by SVHN):
 
 | Metric | Overall | Handwritten | SVHN | Synthetic |
 | :--- | :--- | :--- | :--- | :--- |
@@ -428,6 +430,33 @@ With the conclusion of all training and evaluation runs on the new network, the 
 | **Stage 1 (Global) Mean IoU** | **0.8046** | **0.7895** | **0.8050** | N/A |
 | **Stage 3 (Individual) Mean IoU** | **0.7355** | **0.7703** | **0.7346** | N/A |
 
-> **Final Phase 4 Verdict:** The transition to custom deep learning models (YOLOv8 global detection and individual digit detection) paired with NMS deduplication and robust checkpoint resuming has culminated in a **+16.17% increase** in overall sequence accuracy (surging from 68.00% to **84.17%**). Bypassing image enhancements altogether remains the absolute optimal production layout, enabling sub-25ms inference latencies per image with maximum precision.
+### 📈 Balanced End-to-End Pipeline Performance (Phase 4 Final - Balanced)
+
+This table represents the unbiased performance under balanced sampling (`--balanced` flag, ensuring a clean 50/50 split of 1,000 handwritten vs. 1,000 SVHN samples), providing a true and fair view of average category-independent accuracy:
+
+| Metric | Overall | Handwritten | SVHN | Synthetic |
+| :--- | :--- | :--- | :--- | :--- |
+| **Full Sequence Accuracy** | **73.34%** | **60.78%** | **85.11%** | N/A |
+| **Mean Digit Accuracy (Pos)** | **84.82%** | **77.83%** | **91.36%** | N/A |
+| **Succession Rate** | **94.90%** | **92.83%** | **96.71%** | N/A |
+| **Stage 1 (Global) Mean IoU** | **0.7752** | **0.7428** | **0.8056** | N/A |
+| **Stage 3 (Individual) Mean IoU** | **0.7649** | **0.7906** | **0.7424** | N/A |
+
+> **Final Phase 4 Verdict:** The transition to custom deep learning models (YOLOv8 global detection and individual digit detection) paired with NMS deduplication and robust checkpoint resuming has culminated in a **+16.17% increase** in overall sequence accuracy under the natural distribution (surging from 68.00% to **84.17%**). Bypassing image enhancements altogether remains the absolute optimal production layout, enabling sub-25ms inference latencies per image with maximum precision. Balanced sampling metrics further reveal that while SVHN achieves superb sequence accuracy of 85.11%, handwritten digit recognition remains the primary evolutionary focus with 60.78% sequence accuracy.
+
+---
+
+### 🟢 Stage 4.6: Production README Clean-Up & Balanced Sampling Evaluation Flag
+
+**Focus:** Streamlining the main project documentation (`readme.md`) to represent the exact production deployment layout, cleaning up exploratory draft comments, migrating the image enhancement study completely to the historical evolution logs, and equipping the evaluation suite with a robust balanced sampling parameter.
+
+*   **3-Stage Pipeline Definition & README Clean-up:** Re-structured the core workflow from a 4-stage pipeline to a clean 3-stage OCR architecture:
+    1.  **Stage 1: Global Bounding Box Detection** (YOLOv8 sequence localization)
+    2.  **Stage 2: Individual Digit Localization** (YOLOv8 digit bounding box detection)
+    3.  **Stage 3: Digit Classification** (ResNet18 character recognition)
+    All residual sections and placeholder developer comments were completely purged from the production `readme.md`.
+*   **Balanced Category Sampling (`--balanced`):** Integrated a new command-line argument `--balanced` across all core evaluation scripts (`eval_all.py`, `eval_global_bbox.py`, `eval_sharpening.py`, `eval_individual_bbox.py`, `eval_digit_recog.py`, `eval_pipeline.py`).
+    *   **Default Behavior (Proportional):** Performs proportional stratified sampling based on the real dataset skew (SVHN vs. Handwritten).
+    *   **Balanced Behavior (Equal Split):** Cuts sample limits equally between categories (`max-samples // len(categories)`), ensuring a clean 50/50 comparison baseline even when one dataset is significantly smaller, eliminating statistical bias.
 
 ---

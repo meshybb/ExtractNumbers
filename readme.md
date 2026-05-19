@@ -129,11 +129,14 @@ To ensure clarity across all reports, the following metrics are used:
 
 
 ### How to Run Evaluations
-The suite is divided into scripts for isolated performance analysis. You can now specify custom data sources for evaluation:
+The suite is divided into scripts for isolated performance analysis. You can now specify custom data sources for evaluation and choose between proportional stratified sampling (default) or balanced equal-split sampling:
 
 ```bash
-# Run ALL evaluations (Stages 1-4 + Full End-to-End Pipeline)
+# Run ALL evaluations (Stages 1-3 + Full End-to-End Pipeline) with default proportional sampling
 python src/evaluation/eval_all.py --max-samples 100
+
+# Run ALL evaluations with a perfectly balanced 50/50 split between SVHN and Handwritten
+python src/evaluation/eval_all.py --max-samples 116 --balanced
 
 # Full End-to-End pipeline benchmark with error analysis dashboard
 python src/evaluation/eval_pipeline.py --max-samples 500 --save-viz --analyze-errors

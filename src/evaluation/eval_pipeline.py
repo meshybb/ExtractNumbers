@@ -49,6 +49,7 @@ def main():
     parser.add_argument("--analyze-errors", action="store_true", help="Generate detailed error analysis visualization")
     parser.add_argument("--data-root", type=str, default=os.path.join(BASE_DIR, "data", "digits_data"), help="Path to the dataset root")
     parser.add_argument("--output-dir", type=str, default=os.path.join(BASE_DIR, "outputs"), help="Base directory for outputs")
+    parser.add_argument("--balanced", action="store_true", help="Use equal/balanced split for categories")
     # parser.add_argument("--enhancement"... removed to test both)
     args = parser.parse_args()
 
@@ -96,11 +97,17 @@ def main():
     eval_samples = []
     
     if samples_by_cat:
-        total_samples = sum(len(s) for s in samples_by_cat.values())
-        for cat, samps in samples_by_cat.items():
-            random.shuffle(samps)
-            samples_per_cat = max(1, int(round(args.max_samples * (len(samps) / total_samples))))
-            eval_samples.extend(samps[:samples_per_cat])
+        if args.balanced:
+            target_per_cat = args.max_samples // len(samples_by_cat)
+            for cat, samps in samples_by_cat.items():
+                random.shuffle(samps)
+                eval_samples.extend(samps[:min(target_per_cat, len(samps))])
+        else:
+            total_samples = sum(len(s) for s in samples_by_cat.values())
+            for cat, samps in samples_by_cat.items():
+                random.shuffle(samps)
+                samples_per_cat = max(1, int(round(args.max_samples * (len(samps) / total_samples))))
+                eval_samples.extend(samps[:samples_per_cat])
             
         # Shuffle the final evaluation list to mix datasets during processing
         random.shuffle(eval_samples)
