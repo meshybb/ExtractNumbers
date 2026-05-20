@@ -82,7 +82,7 @@ def visualize_pipeline(image_path, model_dir, classifier_path, output_path=None)
     
     # ---------------- VISUALIZATION ----------------
     print("Generating pipeline visualization...")
-    fig, axes = plt.subplots(1, 5, figsize=(20, 5))
+    fig, axes = plt.subplots(1, 4, figsize=(16, 5))
     fig.suptitle(f"FULL EXTRACTION PIPELINE: Multi-Stage Progression\nPredicted: {final_number}", fontsize=20, fontweight='bold')
     
     # Plot 1: Original Image
@@ -103,23 +103,18 @@ def visualize_pipeline(image_path, model_dir, classifier_path, output_path=None)
     axes[2].set_title("3. Raw Crop (Unsharpened)")
     axes[2].axis('off')
     
-    # Plot 4: Image Enhancement
+    # Plot 4: Individual Detection
     sharp_rgb = cv2.cvtColor(sharp, cv2.COLOR_BGR2RGB)
     axes[3].imshow(sharp_rgb)
-    axes[3].set_title("4. Image Enhancement (Sharpening)")
-    axes[3].axis('off')
-    
-    # Plot 5: Individual Detection
-    axes[4].imshow(sharp_rgb)
     for i, ibox in enumerate(iboxes):
         ix1, iy1, ix2, iy2 = map(int, ibox)
         rect_indiv = Rectangle((ix1, iy1), ix2 - ix1, iy2 - iy1, linewidth=2, edgecolor='r', facecolor='none')
-        axes[4].add_patch(rect_indiv)
+        axes[3].add_patch(rect_indiv)
         # Add digit label
-        axes[4].text(ix1, max(0, iy1-5), digits[i], color='white', fontsize=12, fontweight='bold', bbox=dict(facecolor='red', alpha=0.5, pad=1))
+        axes[3].text(ix1, max(0, iy1-5), digits[i], color='white', fontsize=12, fontweight='bold', bbox=dict(facecolor='red', alpha=0.5, pad=1))
         
-    axes[4].set_title("5. Individual Detection (IndividualBB)")
-    axes[4].axis('off')
+    axes[3].set_title("4. Individual Detection (IndividualBB)")
+    axes[3].axis('off')
     
     plt.tight_layout()
     

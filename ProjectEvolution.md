@@ -465,11 +465,10 @@ This table represents the unbiased performance under balanced sampling (`--balan
 
 **Focus:** Providing clear, visual step-by-step documentation of the model's inner workings during inference.
 
-*   **Pipeline Progression Visualization:** Created a dedicated script (`src/inference/visualize_pipeline.py`) that captures and plots the inference progression of a single image. It outputs a 5-step subplot detailing:
+*   **Pipeline Progression Visualization:** Created a dedicated script (`src/inference/visualize_pipeline.py`) that captures and plots the inference progression of a single image. It outputs a 4-step subplot detailing:
     1.  **Original Image:** The raw input.
     2.  **Global Detection (GlobalBB):** The entire sequence localized with a green bounding box.
     3.  **Raw Crop (Unsharpened):** The isolated number sequence region.
-    4.  **Image Enhancement (Sharpening):** The upscaled and enhanced crop sequence.
-    5.  **Individual Detection (IndividualBB):** The final crop with red bounding boxes indicating individual digit localizations and their classification labels.
+    4.  **Individual Detection (IndividualBB):** The final crop with red bounding boxes indicating individual digit localizations and their classification labels.
 
 ---
