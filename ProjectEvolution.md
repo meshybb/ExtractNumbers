@@ -475,4 +475,31 @@ This table represents the unbiased performance under balanced sampling (`--balan
 
 > **Final Phase 4 Verdict:** The transition to custom deep learning models (YOLOv8 global detection and individual digit detection) paired with NMS deduplication and robust checkpoint resuming has culminated in a **+16.17% increase** in overall sequence accuracy under the natural distribution (surging from 68.00% to **84.17%**). Bypassing image enhancements altogether remains the absolute optimal production layout, enabling sub-25ms inference latencies per image with maximum precision. Balanced sampling metrics further reveal that while SVHN achieves superb sequence accuracy of 85.11%, handwritten digit recognition remains the primary evolutionary focus with 60.78% sequence accuracy.
 
+
+### 🟢 Stage 4.6: Production README Clean-Up & Balanced Sampling Evaluation Flag
+
+**Focus:** Streamlining the main project documentation (`readme.md`) to represent the exact production deployment layout, cleaning up exploratory draft comments, migrating the image enhancement study completely to the historical evolution logs, and equipping the evaluation suite with a robust balanced sampling parameter.
+
+*   **3-Stage Pipeline Definition & README Clean-up:** Re-structured the core workflow from a 4-stage pipeline to a clean 3-stage OCR architecture:
+    1.  **Stage 1: Global Bounding Box Detection** (YOLOv8 sequence localization)
+    2.  **Stage 2: Individual Digit Localization** (YOLOv8 digit bounding box detection)
+    3.  **Stage 3: Digit Classification** (ResNet18 character recognition)
+    All residual sections and placeholder developer comments were completely purged from the production `readme.md`.
+*   **Balanced Category Sampling (`--balanced`):** Integrated a new command-line argument `--balanced` across all core evaluation scripts (`eval_all.py`, `eval_global_bbox.py`, `eval_sharpening.py`, `eval_individual_bbox.py`, `eval_digit_recog.py`, `eval_pipeline.py`).
+    *   **Default Behavior (Proportional):** Performs proportional stratified sampling based on the real dataset skew (SVHN vs. Handwritten).
+    *   **Balanced Behavior (Equal Split):** Cuts sample limits equally between categories (`max-samples // len(categories)`), ensuring a clean 50/50 comparison baseline even when one dataset is significantly smaller, eliminating statistical bias.
+
+---
+
+### 🟢 Stage 4.7: Visual Pipeline Progression Generator
+
+**Focus:** Providing clear, visual step-by-step documentation of the model's inner workings during inference.
+
+*   **Pipeline Progression Visualization:** Created a dedicated script (`src/inference/visualize_pipeline.py`) that captures and plots the inference progression of a single image. It outputs a 4-step subplot detailing:
+    1.  **Original Image:** The raw input.
+    2.  **Global Detection (GlobalBB):** The entire sequence localized with a green bounding box.
+    3.  **Crop:** The isolated number sequence region.
+    4.  **Individual Detection (IndividualBB):** The final crop with red bounding boxes indicating individual digit localizations and their classification labels.
+
+
 ---
