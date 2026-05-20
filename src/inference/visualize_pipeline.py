@@ -11,7 +11,6 @@ from ultralytics import YOLO
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(os.path.join(BASE_DIR, "src"))
 
-from image_preprocessing.digit_preprocessor import enhance_digit
 from digit_recognizer.digit_recognizer import load_classifier, get_device, preprocess_crop
 from utils.bbox_utils import merge_global_boxes, nms_individual_boxes
 
@@ -53,11 +52,8 @@ def visualize_pipeline(image_path, model_dir, classifier_path, output_path=None)
     gx1, gy1, gx2, gy2 = max(0, gx1), max(0, gy1), min(w, gx2), min(h, gy2)
     crop = img[gy1:gy2, gx1:gx2]
     
-    # 2. Enhancement
-    sharp = enhance_digit(crop, upscale_factor=2.0)
-    
-    # 3. Individual Detection
-    res2 = indiv_model.predict(source=sharp, imgsz=256, verbose=False)
+    # 2. Individual Detection
+    res2 = indiv_model.predict(source=crop, imgsz=256, verbose=False)
     if not res2 or len(res2[0].boxes) == 0:
         print("Detected container but no individual digits found.")
         return
@@ -72,7 +68,7 @@ def visualize_pipeline(image_path, model_dir, classifier_path, output_path=None)
     # 4. Classification
     digits = []
     for ibox in iboxes:
-        inputs = preprocess_crop(sharp, (ibox[0], ibox[1], ibox[2], ibox[3])).unsqueeze(0).to(device)
+        inputs = preprocess_crop(crop, (ibox[0], ibox[1], ibox[2], ibox[3])).unsqueeze(0).to(device)
         with torch.no_grad():
             digit = classifier(inputs).argmax(dim=1).item()
             digits.append(str(digit))
@@ -100,12 +96,11 @@ def visualize_pipeline(image_path, model_dir, classifier_path, output_path=None)
     # Plot 3: Raw Crop
     crop_rgb = cv2.cvtColor(crop, cv2.COLOR_BGR2RGB)
     axes[2].imshow(crop_rgb)
-    axes[2].set_title("3. Raw Crop (Unsharpened)")
+    axes[2].set_title("3. Crop")
     axes[2].axis('off')
     
     # Plot 4: Individual Detection
-    sharp_rgb = cv2.cvtColor(sharp, cv2.COLOR_BGR2RGB)
-    axes[3].imshow(sharp_rgb)
+    axes[3].imshow(crop_rgb)
     for i, ibox in enumerate(iboxes):
         ix1, iy1, ix2, iy2 = map(int, ibox)
         rect_indiv = Rectangle((ix1, iy1), ix2 - ix1, iy2 - iy1, linewidth=2, edgecolor='r', facecolor='none')
