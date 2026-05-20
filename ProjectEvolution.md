@@ -414,6 +414,37 @@ These improvements have been integrated into both the main inference script (`pr
 
 ---
 
+
+### 🟢 Stage 4.6: Production README Clean-Up & Balanced Sampling Evaluation Flag
+
+**Focus:** Streamlining the main project documentation (`readme.md`) to represent the exact production deployment layout, cleaning up exploratory draft comments, migrating the image enhancement study completely to the historical evolution logs, and equipping the evaluation suite with a robust balanced sampling parameter.
+
+*   **3-Stage Pipeline Definition & README Clean-up:** Re-structured the core workflow from a 4-stage pipeline to a clean 3-stage OCR architecture:
+    1.  **Stage 1: Global Bounding Box Detection** (YOLOv8 sequence localization)
+    2.  **Stage 2: Individual Digit Localization** (YOLOv8 digit bounding box detection)
+    3.  **Stage 3: Digit Classification** (ResNet18 character recognition)
+    All residual sections and placeholder developer comments were completely purged from the production `readme.md`.
+*   **Balanced Category Sampling (`--balanced`):** Integrated a new command-line argument `--balanced` across all core evaluation scripts (`eval_all.py`, `eval_global_bbox.py`, `eval_sharpening.py`, `eval_individual_bbox.py`, `eval_digit_recog.py`, `eval_pipeline.py`).
+    *   **Default Behavior (Proportional):** Performs proportional stratified sampling based on the real dataset skew (SVHN vs. Handwritten).
+    *   **Balanced Behavior (Equal Split):** Cuts sample limits equally between categories (`max-samples // len(categories)`), ensuring a clean 50/50 comparison baseline even when one dataset is significantly smaller, eliminating statistical bias.
+
+---
+
+### 🟢 Stage 4.7: Video & Sequence Dataset Pipelines Integration
+
+**Focus:** Broadening the training and inference pipeline's data variety by adding standard video and text tracking datasets.
+
+*   **Added Datasets:** Programmatically integrated and automated the download pipelines for five new major video and sequence datasets inside `src/prep_data.py`:
+    1.  **DSText V2** (fully automated Zenodo downloader with chunked downloads and progress indicators).
+    2.  **Moving MNIST** (fully automated Toront.edu array downloader with OpenCV contour-based frame tracking).
+    3.  **RoadText-1K/3K** (fully automated CV Spain portal video sandbox downloader and fixed annotation fetcher).
+    4.  **ICDAR Scene Video Text Spotting** (fully automated sandbox video downloader and custom annotation auto-generator).
+    5.  **BOVText** (fully automated sandbox video downloader and custom annotation auto-generator).
+
+
+---
+
+
 ## 🏁 Phase 4 Final Summary: End-to-End Pipeline Performance
 
 With the conclusion of all training and evaluation runs on the new network, the final end-to-end pipeline metrics represent the peak evolutionary state of the OCR system. Below are the results under both the proportional (natural) sampling and the balanced sampling distributions.
@@ -444,7 +475,6 @@ This table represents the unbiased performance under balanced sampling (`--balan
 
 > **Final Phase 4 Verdict:** The transition to custom deep learning models (YOLOv8 global detection and individual digit detection) paired with NMS deduplication and robust checkpoint resuming has culminated in a **+16.17% increase** in overall sequence accuracy under the natural distribution (surging from 68.00% to **84.17%**). Bypassing image enhancements altogether remains the absolute optimal production layout, enabling sub-25ms inference latencies per image with maximum precision. Balanced sampling metrics further reveal that while SVHN achieves superb sequence accuracy of 85.11%, handwritten digit recognition remains the primary evolutionary focus with 60.78% sequence accuracy.
 
----
 
 ### 🟢 Stage 4.6: Production README Clean-Up & Balanced Sampling Evaluation Flag
 
@@ -470,5 +500,6 @@ This table represents the unbiased performance under balanced sampling (`--balan
     2.  **Global Detection (GlobalBB):** The entire sequence localized with a green bounding box.
     3.  **Crop:** The isolated number sequence region.
     4.  **Individual Detection (IndividualBB):** The final crop with red bounding boxes indicating individual digit localizations and their classification labels.
+
 
 ---
