@@ -501,5 +501,7 @@ This table represents the unbiased performance under balanced sampling (`--balan
     3.  **Crop:** The isolated number sequence region.
     4.  **Individual Detection (IndividualBB):** The final crop with red bounding boxes indicating individual digit localizations and their classification labels.
 
+![Stage 4 Step-by-Step Visualization](assets/pipeline_results/new_example_10.png)
+![Stage 4 Step-by-Step Visualization](assets/pipeline_results/new_example_7.png)
 
 ---
