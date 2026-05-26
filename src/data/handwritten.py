@@ -26,7 +26,7 @@ def prepare(output_base_dir, limit=None):
     
     dataset_dir = os.path.join(output_base_dir, "handwritten")
     os.makedirs(dataset_dir, exist_ok=True)
-    num_samples = limit if limit else 1000
+    num_samples = limit if limit else 10000
     
     for i in tqdm(range(num_samples), desc="Handwritten"):
         n_digits = random.randint(1, 6)

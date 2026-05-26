@@ -119,6 +119,8 @@ To ensure clarity across all reports, the following metrics are used:
 | **Handwritten** | **99.51%** | 205 digits |
 | **SVHN** | **98.97%** | 4256 digits |
 
+> **Stage 5 Baseline (Before Retraining on Expanded Dataset):** The metrics below reflect models trained on the original 1,000-sample handwritten dataset (Phase 4 Final). After regenerating the handwritten data and retraining, compare using `--balanced` to see the improvement in Handwritten accuracy.
+
 ### 🏆 Full End-to-End Pipeline Performance
 *Master benchmark: Raw pixels → Final predicted string.*
 
@@ -130,18 +132,22 @@ To ensure clarity across all reports, the following metrics are used:
 | **Stage 1 Mean IoU** | **0.8046** | **0.7895** | **0.8050** |
 | **Stage 2 Mean IoU** | **0.7355** | **0.7703** | **0.7346** |
 
+*(Sampled proportionally — dominated by SVHN at 97.1% of the dataset. Run with `--balanced` for a fair 50/50 view.)*
+
 ---
 
 
 ### How to Run Evaluations
-The suite is divided into scripts for isolated performance analysis. You can now specify custom data sources for evaluation and choose between proportional stratified sampling (default) or balanced equal-split sampling:
+The suite is divided into scripts for isolated performance analysis. You can specify custom data sources and choose between proportional stratified sampling (default) or balanced equal-split sampling:
+
+> **Recommended after Stage 5 expansion:** Use `--balanced` to ensure stable, cross-version comparisons. Under proportional sampling, the distribution shifted (33:1 → 3.3:1 SVHN:Handwritten), so "Overall" values are not directly comparable to pre-Stage 5 results.
 
 ```bash
 # Run ALL evaluations (Stages 1-3 + Full End-to-End Pipeline) with default proportional sampling
 python src/evaluation/eval_all.py --max-samples 100
 
-# Run ALL evaluations with a perfectly balanced 50/50 split between SVHN and Handwritten
-python src/evaluation/eval_all.py --max-samples 116 --balanced
+# ⭐ RECOMMENDED: Run with perfectly balanced 50/50 split for stable cross-version comparisons
+python src/evaluation/eval_all.py --max-samples 2000 --balanced
 
 # Full End-to-End pipeline benchmark with error analysis dashboard
 python src/evaluation/eval_pipeline.py --max-samples 500 --save-viz --analyze-errors
@@ -156,9 +162,13 @@ The pipeline now supports "Weakly Labeled" datasets—data that contains global 
 | Dataset | Type | Samples | Command to Prepare |
 | :--- | :--- | :---: | :--- |
 | **Trains OCR** | Weakly Labeled | 13 | `python src/data/ocr_trains.py` |
-| **Race Numbers** | Fully Labeled | 10,000+ | `python src/prep_data.py --datasets race_numbers` |
-| **Handwritten** | Fully Labeled | 10,000+ | `python src/prep_data.py --datasets handwritten` |
-| **SVHN / Digits** | Fully Labeled | 200,000+ | `python src/prep_data.py --datasets svhn` |
+| **Race Numbers** | Fully Labeled | 30 | `python src/prep_data.py --datasets race_numbers` |
+| **Handwritten** | Fully Labeled | **10,000** | `python src/prep_data.py --datasets handwritten` |
+| **SVHN / Digits** | Fully Labeled | 33,402 | `python src/prep_data.py --datasets svhn` |
+
+> **Stage 5 (Synthetic Data Expansion):** The `Handwritten` dataset was expanded from 1,000 to **10,000 samples** to address a 33:1 training skew between real-world (SVHN) and synthetic data. This reduces the skew to **3.3:1** and is expected to significantly improve handwritten digit sequence accuracy. All samples are programmatically generated — no new data source is required. Use `--handwritten-limit` in `prep_data.py` to control the count independently from SVHN.
+
+> **⚠️ Statistics Note:** After this expansion, the default proportional evaluation will draw ~8× more handwritten samples than before (230 vs. 29 per 1,000 total), so the reported "Overall" accuracy may appear lower even if per-category performance improved. Always compare models using `--balanced` for stable benchmarks.
 
 ### Handling Weakly Labeled Data
 When a dataset is identified as weakly labeled (`has_digit_boxes=False` in `annotations.json`):
