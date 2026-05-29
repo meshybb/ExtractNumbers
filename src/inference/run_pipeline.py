@@ -17,11 +17,11 @@ from ultralytics import YOLO
 
 # Add src to path if needed
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
-sys.path.append(str(BASE_DIR / "src"))
+sys.path.append(str(BASE_DIR))
 
-from inference.frame_selector import FrameSelector
-from inference.staged_pipeline import StagedPipeline
-from digit_recognizer.digit_recognizer import load_classifier, get_device
+from src.inference.frame_selector import FrameSelector
+from src.inference.staged_pipeline import StagedPipeline
+from src.digit_recognizer.digit_recognizer import load_classifier, get_device
 
 def setup_logger(verbose: bool):
     level = logging.INFO if verbose else logging.WARNING
@@ -63,11 +63,11 @@ def main():
     parser.add_argument("--video", required=True, help="Path to video file")
     
     # Frame selection args
-    frame_group = parser.add_mutually_exclusive_group(required=True)
+    frame_group = parser.add_mutually_exclusive_group(required=False)
     frame_group.add_argument("--frames", help="Specific frames (comma-list, json, or file)")
     frame_group.add_argument("--k", type=int, help="Number of frames to select")
-    parser.add_argument("--strategy", choices=["uniform", "motion_and_blur", "detection-driven"], 
-                        default="uniform", help="Frame selection strategy")
+    parser.add_argument("--strategy", choices=["uniform", "motion_and_blur", "detection-driven", "random_1_in_10"], 
+                        default="random_1_in_10", help="Frame selection strategy")
                         
     parser.add_argument("--out-dir", required=True, help="Output directory")
     parser.add_argument("--model-dir", default="outputs/trained_models", help="Directory containing models")
@@ -100,17 +100,17 @@ def main():
         batch_size = int(args.batch_size)
 
     # Strategy setup
-    if args.k is not None:
-        selector = FrameSelector(strategy=args.strategy, top_k=args.k)
-    else:
+    if args.frames is not None:
         # Simplistic parsing for --frames comma list
-        # In a full implementation, you'd parse file/json
         frame_list = [int(x.strip()) for x in args.frames.split(",")]
-        # We can simulate this by overriding select_indices on a dummy selector
         class ExactSelector(FrameSelector):
             def select_indices(self, frames):
                 return [i for i in frame_list if i < len(frames)]
         selector = ExactSelector()
+    else:
+        # Fallback to strategy (with k if provided, else default k=1 or irrelevant for random_1_in_10)
+        k_val = args.k if args.k is not None else 1
+        selector = FrameSelector(strategy=args.strategy, top_k=k_val)
 
     logging.info(f"Loading video from {video_path}...")
     frames = load_video_frames(video_path)

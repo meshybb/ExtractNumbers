@@ -29,7 +29,7 @@ class FrameSelector:
         lap_thresh: float = 50.0,
         sample_n: int = 500
     ):
-        valid_strategies = ("interval", "top_variance", "uniform", "motion_and_blur")
+        valid_strategies = ("interval", "top_variance", "uniform", "motion_and_blur", "random_1_in_10")
         if strategy not in valid_strategies:
             raise ValueError(f"strategy must be one of {valid_strategies}")
         if interval < 1:
@@ -49,7 +49,15 @@ class FrameSelector:
         if n == 0:
             return []
 
-        if self.strategy == "interval":
+        if self.strategy == "random_1_in_10":
+            import random
+            indices = []
+            for i in range(0, n, 10):
+                chunk_size = min(10, n - i)
+                indices.append(i + random.randint(0, chunk_size - 1))
+            return indices
+            
+        elif self.strategy == "interval":
             return list(range(0, n, self.interval))
             
         elif self.strategy == "uniform":

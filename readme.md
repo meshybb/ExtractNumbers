@@ -54,6 +54,24 @@ The extraction process is divided into three core stages:
 
 The system is designed for high-performance batch processing and seamless model synchronization.
 
+**To run the staged pipeline on a video using Slurm (defaults to randomly sampling 1 in 10 frames):**
+```bash
+sbatch slarm_code/run_generic.slurm src/inference/run_pipeline.py \
+    --video path/to/video.mp4 \
+    --out-dir outputs/video_results \
+    --model-dir outputs/trained_models \
+    --classifier outputs/trained_models/digit_recognizer.pt
+```
+
+*Example (processing a specific dataset video with a specific strategy):*
+```bash
+sbatch slarm_code/run_generic.slurm src/inference/run_pipeline.py \
+    --video data/DSText_V2/Game/Video_150_5_0.mp4 \
+    --out-dir outputs/video_150_results \
+    --model-dir outputs/trained_models \
+    --classifier outputs/trained_models/digit_recognizer.pt
+```
+
 **To train and run the full batch pipeline:**
 ```bash
 python src/training/train_pipeline.py
