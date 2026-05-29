@@ -1,0 +1,16 @@
+[
+  {
+    "frame": 1510,
+    "status": "ok",
+    "prediction": "61",
+    "global_conf": 0.4049201011657715,
+    "n_individuals": 2,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1510/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1510/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1510/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1510/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1510/stage_05_classification.png"
+    }
+  }
+]
