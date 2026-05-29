@@ -51,11 +51,28 @@ def load_video_frames(video_path: Path) -> list:
 
 def handle_paths(path_str: str, default_rel: bool = True) -> Path:
     p = Path(path_str)
-    # The user relaxed the strict relative requirement, so we just return the path directly,
-    # but we can resolve it against BASE_DIR if it's not absolute and we want a default relative.
     if not p.is_absolute() and default_rel:
         return BASE_DIR / p
     return p
+
+def write_summaries(target_dir: Path, records_to_write: list, summary_format: str):
+    """Write CSV and/or JSON summaries into target_dir."""
+    if summary_format in ["csv", "both"]:
+        csv_path = target_dir / "summary.csv"
+        with open(csv_path, 'w', newline='') as f:
+            writer = csv.DictWriter(f, fieldnames=["frame", "status", "prediction", "global_conf", "n_individuals", "paths"])
+            writer.writeheader()
+            for r in records_to_write:
+                r_copy = r.copy()
+                r_copy["paths"] = json.dumps(r["paths"])
+                writer.writerow(r_copy)
+        logging.info(f"Saved CSV summary to {csv_path}")
+
+    if summary_format in ["json", "both"]:
+        json_path = target_dir / "summary.json"
+        with open(json_path, 'w') as f:
+            json.dump(records_to_write, f, indent=2)
+        logging.info(f"Saved JSON summary to {json_path}")
 
 def main():
     parser = argparse.ArgumentParser(description="Staged Video Processing Pipeline")
@@ -101,14 +118,12 @@ def main():
 
     # Strategy setup
     if args.frames is not None:
-        # Simplistic parsing for --frames comma list
         frame_list = [int(x.strip()) for x in args.frames.split(",")]
         class ExactSelector(FrameSelector):
             def select_indices(self, frames):
                 return [i for i in frame_list if i < len(frames)]
         selector = ExactSelector()
     else:
-        # Fallback to strategy (with k if provided, else default k=1 or irrelevant for random_1_in_10)
         k_val = args.k if args.k is not None else 1
         selector = FrameSelector(strategy=args.strategy, top_k=k_val)
 
@@ -132,7 +147,6 @@ def main():
             if args.save_stages:
                 fd = out_dir / f"frame_{i:04d}"
                 fd.mkdir(parents=True, exist_ok=True)
-                # Save just the raw frame as a dry-run artifact
                 cv2.imwrite(str(fd / "stage_01_raw.png"), frames[i])
                 records[-1]["paths"]["stage_01_raw"] = str(fd / "stage_01_raw.png")
                 
@@ -147,25 +161,15 @@ def main():
         pipeline = StagedPipeline(selector=selector, out_dir=out_dir, batch_size=batch_size, save_stages=args.save_stages)
         records = pipeline.run(frames, global_model, indiv_model, classifier, device)
 
-    # Save summaries
-    if args.summary_format in ["csv", "both"]:
-        csv_path = out_dir / "summary.csv"
-        with open(csv_path, 'w', newline='') as f:
-            writer = csv.DictWriter(f, fieldnames=["frame", "status", "prediction", "global_conf", "n_individuals", "paths"])
-            writer.writeheader()
-            for r in records:
-                # Stringify paths for CSV
-                r_copy = r.copy()
-                r_copy["paths"] = json.dumps(r["paths"])
-                writer.writerow(r_copy)
-        logging.info(f"Saved CSV summary to {csv_path}")
+    # Save combined summary in out_dir (all records together)
+    write_summaries(out_dir, records, args.summary_format)
 
-    if args.summary_format in ["json", "both"]:
-        json_path = out_dir / "summary.json"
-        with open(json_path, 'w') as f:
-            json.dump(records, f, indent=2)
-        logging.info(f"Saved JSON summary to {json_path}")
-        
+    # Also save a per-frame summary inside each frame's subdirectory
+    for record in records:
+        frame_dir = out_dir / f"frame_{record['frame']:04d}"
+        if frame_dir.exists():
+            write_summaries(frame_dir, [record], args.summary_format)
+
     logging.info("Pipeline completed successfully.")
 
 if __name__ == "__main__":
