@@ -7,3 +7,4 @@ make sure to look for already existing files and update them before creating new
 all library installations must be done through the requirements.txt file; standalone installations are not allowed.
 
 and if there are changes, also update the ProjectEvolution.md doc.
+if you are working on a todo list after each step update the todo
