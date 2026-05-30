@@ -476,21 +476,6 @@ This table represents the unbiased performance under balanced sampling (`--balan
 > **Final Phase 4 Verdict:** The transition to custom deep learning models (YOLOv8 global detection and individual digit detection) paired with NMS deduplication and robust checkpoint resuming has culminated in a **+16.17% increase** in overall sequence accuracy under the natural distribution (surging from 68.00% to **84.17%**). Bypassing image enhancements altogether remains the absolute optimal production layout, enabling sub-25ms inference latencies per image with maximum precision. Balanced sampling metrics further reveal that while SVHN achieves superb sequence accuracy of 85.11%, handwritten digit recognition remains the primary evolutionary focus with 60.78% sequence accuracy.
 
 
-### 🟢 Stage 4.6: Production README Clean-Up & Balanced Sampling Evaluation Flag
-
-**Focus:** Streamlining the main project documentation (`readme.md`) to represent the exact production deployment layout, cleaning up exploratory draft comments, migrating the image enhancement study completely to the historical evolution logs, and equipping the evaluation suite with a robust balanced sampling parameter.
-
-*   **3-Stage Pipeline Definition & README Clean-up:** Re-structured the core workflow from a 4-stage pipeline to a clean 3-stage OCR architecture:
-    1.  **Stage 1: Global Bounding Box Detection** (YOLOv8 sequence localization)
-    2.  **Stage 2: Individual Digit Localization** (YOLOv8 digit bounding box detection)
-    3.  **Stage 3: Digit Classification** (ResNet18 character recognition)
-    All residual sections and placeholder developer comments were completely purged from the production `readme.md`.
-*   **Balanced Category Sampling (`--balanced`):** Integrated a new command-line argument `--balanced` across all core evaluation scripts (`eval_all.py`, `eval_global_bbox.py`, `eval_sharpening.py`, `eval_individual_bbox.py`, `eval_digit_recog.py`, `eval_pipeline.py`).
-    *   **Default Behavior (Proportional):** Performs proportional stratified sampling based on the real dataset skew (SVHN vs. Handwritten).
-    *   **Balanced Behavior (Equal Split):** Cuts sample limits equally between categories (`max-samples // len(categories)`), ensuring a clean 50/50 comparison baseline even when one dataset is significantly smaller, eliminating statistical bias.
-
----
-
 ### 🟢 Stage 4.7: Visual Pipeline Progression Generator
 
 **Focus:** Providing clear, visual step-by-step documentation of the model's inner workings during inference.
@@ -558,28 +543,17 @@ python src/prep_data.py --datasets handwritten --handwritten-limit 10000
 | `handwritten` | **10,000** | **23.0%** |
 | **Skew** | **3.3:1** | *(was 33:1)* |
 
-### ⚠️ Important: How to Interpret Statistics After This Change
+### 📈 Results (5,000 samples, proportional: SVHN 76.9% / Handwritten 23.1%)
 
-The default evaluation uses **proportional stratified sampling** to reflect the dataset distribution. After expansion:
-* A `--max-samples 1000` run previously drew **~971 SVHN** + **~29 Handwritten** samples.
-* After expansion it draws **~770 SVHN** + **~230 Handwritten** samples — **8× more handwritten**.
-* Because handwritten accuracy is lower (~70%), the reported "**Overall**" accuracy will appear to decrease in the proportional view — **this is not a regression**; the metric is now more honest about how the system performs across both distributions.
+| Metric | Handwritten | SVHN |
+| :--- | :--- | :--- |
+| Full Sequence Accuracy | 69.39% → **72.39%** ⬆️ | 84.54% → **82.94%** ⬇️ |
+| Mean Digit Accuracy | 85.99% → **88.24%** ⬆️ | 91.17% → **90.27%** ⬇️ |
+| Stage 1 Mean IoU | 0.7895 → **0.8749** ⬆️ | 0.8050 → **0.7969** ⬇️ |
+| Stage 2 Mean IoU | 0.7703 → **0.8682** ⬆️ | 0.7346 → **0.7342** ➡️ |
 
-**Always use `--balanced` for stable cross-version model comparisons.**
+> Handwritten improved across all metrics. The small SVHN dip and lower "Overall" are expected — the distribution now includes 8× more handwritten samples.
 
-### 📈 Performance Comparison: Before vs. After Expansion
+### 🖼️ Pipeline Example
 
-> **Note:** The "After" column below shows the performance of the models **retrained on the expanded dataset**. The `--balanced` column ensures a fair 50/50 apples-to-apples comparison.
-
-#### End-to-End Pipeline (Full Sequence Accuracy)
-
-| Sampling | Category | Before (1k Handwritten) | After (10k Handwritten) | Δ |
-| :--- | :--- | :--- | :--- | :--- |
-| **Proportional** | Overall | 84.17% | *(retrain required)* | — |
-| **Proportional** | Handwritten | 69.39% | *(retrain required)* | — |
-| **Proportional** | SVHN | 84.54% | *(retrain required)* | — |
-| **Balanced** | Overall | 73.34% | *(retrain required)* | — |
-| **Balanced** | Handwritten | 60.78% | *(retrain required)* | — |
-| **Balanced** | SVHN | 85.11% | *(retrain required)* | — |
-
-> **Next step:** Re-run `python src/prep_data.py --datasets handwritten` to generate the 10,000 synthetic samples, then re-run `python src/training/train_pipeline.py --force-train` and evaluate with `python src/evaluation/eval_all.py --balanced` to populate the "After" column.
+![Stage 5 Pipeline Example](assets/pipeline_example_hw.png)
