@@ -56,7 +56,6 @@ The extraction process is divided into three core stages:
 2.  **Individual Digit Localization (IndividualBB):** Detects and segments each digit individually within the cropped sequence.
 3.  **Neural Character Recognition (Classification):** ResNet18-based classification of localized digits into final values (0-9).
 
-![Process Pipeline](assets/diagram.PNG)
 
 ---
 
