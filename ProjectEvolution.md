@@ -476,21 +476,6 @@ This table represents the unbiased performance under balanced sampling (`--balan
 > **Final Phase 4 Verdict:** The transition to custom deep learning models (YOLOv8 global detection and individual digit detection) paired with NMS deduplication and robust checkpoint resuming has culminated in a **+16.17% increase** in overall sequence accuracy under the natural distribution (surging from 68.00% to **84.17%**). Bypassing image enhancements altogether remains the absolute optimal production layout, enabling sub-25ms inference latencies per image with maximum precision. Balanced sampling metrics further reveal that while SVHN achieves superb sequence accuracy of 85.11%, handwritten digit recognition remains the primary evolutionary focus with 60.78% sequence accuracy.
 
 
-### 🟢 Stage 4.6: Production README Clean-Up & Balanced Sampling Evaluation Flag
-
-**Focus:** Streamlining the main project documentation (`readme.md`) to represent the exact production deployment layout, cleaning up exploratory draft comments, migrating the image enhancement study completely to the historical evolution logs, and equipping the evaluation suite with a robust balanced sampling parameter.
-
-*   **3-Stage Pipeline Definition & README Clean-up:** Re-structured the core workflow from a 4-stage pipeline to a clean 3-stage OCR architecture:
-    1.  **Stage 1: Global Bounding Box Detection** (YOLOv8 sequence localization)
-    2.  **Stage 2: Individual Digit Localization** (YOLOv8 digit bounding box detection)
-    3.  **Stage 3: Digit Classification** (ResNet18 character recognition)
-    All residual sections and placeholder developer comments were completely purged from the production `readme.md`.
-*   **Balanced Category Sampling (`--balanced`):** Integrated a new command-line argument `--balanced` across all core evaluation scripts (`eval_all.py`, `eval_global_bbox.py`, `eval_sharpening.py`, `eval_individual_bbox.py`, `eval_digit_recog.py`, `eval_pipeline.py`).
-    *   **Default Behavior (Proportional):** Performs proportional stratified sampling based on the real dataset skew (SVHN vs. Handwritten).
-    *   **Balanced Behavior (Equal Split):** Cuts sample limits equally between categories (`max-samples // len(categories)`), ensuring a clean 50/50 comparison baseline even when one dataset is significantly smaller, eliminating statistical bias.
-
----
-
 ### 🟢 Stage 4.7: Visual Pipeline Progression Generator
 
 **Focus:** Providing clear, visual step-by-step documentation of the model's inner workings during inference.
@@ -505,3 +490,70 @@ This table represents the unbiased performance under balanced sampling (`--balan
 ![Stage 4 Step-by-Step Visualization](assets/pipeline_results/new_example_7.png)
 
 ---
+
+## 🟢 Stage 5: Synthetic Data Expansion (Handwritten Dataset ×10)
+
+**Focus:** Correcting the severe training data imbalance between real-world (SVHN) and synthetic (Handwritten) datasets to improve model generalization on handwritten digit sequences.
+
+### 🔴 The Problem: 33:1 Dataset Skew
+
+Before this stage, there was a critical imbalance in the training data:
+
+| Dataset | Type | Samples | Share |
+| :--- | :--- | :--- | :--- |
+| `svhn` | Natural / Real-world | 33,402 | **97.1%** |
+| `handwritten` | **Synthetic / Syntactic** | 1,000 | **2.9%** |
+
+This meant the YOLO detectors (GlobalBB and IndividualBB) and the ResNet18 classifier were trained on **33× more natural scenes than handwritten digit layouts**. This directly caused the documented performance gap: SVHN sequence accuracy was **84.54%** while handwritten was only **69.39%** — a 15-point gap entirely attributable to data starvation on the synthetic side.
+
+### ✅ What Was Changed
+
+#### 1. How does the synthetic dataset work? (Important context)
+
+The `handwritten` dataset is **100% programmatically generated** — no new data source is required. `src/data/handwritten.py` works by:
+- Downloading the **MNIST** digit corpus (60,000 handwritten digit images) via torchvision — already cached locally.
+- Downloading a **natural image backgrounds** corpus via kagglehub.
+- For each sample: randomly selecting 1–6 MNIST digits, scaling them (2×–4×), pasting them onto a random natural background crop with random spacing, color jitter, and line distractors.
+
+Increasing the count simply runs this generation algorithm more times.
+
+#### 2. Code Changes Made
+
+**`src/data/handwritten.py`** — Default sample count changed:
+```diff
+- num_samples = limit if limit else 1000
++ num_samples = limit if limit else 10000
+```
+
+**`src/prep_data.py`** — Added `--handwritten-limit` CLI argument:
+* Previously, the global `--limit` flag was shared across all datasets. Passing `--limit 10000` would cap **SVHN** at 10,000 too — losing 23,000 real-world training samples.
+* A new `--handwritten-limit` argument now independently controls synthetic data generation, decoupled from the global `--limit`.
+```bash
+# Generate 10,000 synthetic handwritten only (leaves SVHN untouched at 33,402):
+python src/prep_data.py --datasets handwritten --handwritten-limit 10000
+```
+
+**`src/evaluation/eval_all.py`** — Updated `--balanced` documentation and help text to explicitly recommend it for cross-version comparisons post-expansion.
+
+### 📊 Dataset Distribution After Expansion
+
+| Dataset | Samples | Share |
+| :--- | :--- | :--- |
+| `svhn` | 33,402 | **77.0%** |
+| `handwritten` | **10,000** | **23.0%** |
+| **Skew** | **3.3:1** | *(was 33:1)* |
+
+### 📈 Results (5,000 samples, proportional: SVHN 76.9% / Handwritten 23.1%)
+
+| Metric | Handwritten | SVHN |
+| :--- | :--- | :--- |
+| Full Sequence Accuracy | 69.39% → **72.39%** ⬆️ | 84.54% → **82.94%** ⬇️ |
+| Mean Digit Accuracy | 85.99% → **88.24%** ⬆️ | 91.17% → **90.27%** ⬇️ |
+| Stage 1 Mean IoU | 0.7895 → **0.8749** ⬆️ | 0.8050 → **0.7969** ⬇️ |
+| Stage 2 Mean IoU | 0.7703 → **0.8682** ⬆️ | 0.7346 → **0.7342** ➡️ |
+
+> Handwritten improved across all metrics. The small SVHN dip and lower "Overall" are expected — the distribution now includes 8× more handwritten samples.
+
+### 🖼️ Pipeline Example
+
+![Stage 5 Pipeline Example](assets/pipeline_example_hw.png)

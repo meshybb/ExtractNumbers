@@ -8,7 +8,6 @@ from dotenv import load_dotenv
 # Ensure we can import the data loaders from the local directory
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from data import svhn, race_numbers, handwritten, ocr_trains
-from data import download_icdar_svt, download_dstext_v2, download_bovtext, download_moving_mnist, download_roadtext
 
 def _safe_rmtree(path, base_dir, label):
     """Remove *path* only when it is a real directory inside *base_dir*."""
@@ -35,7 +34,8 @@ def main():
         action="store_true",
         help="Delete existing processed data before running.",
     )
-    parser.add_argument("--limit", type=int, default=None, help="Limit samples per dataset.")
+    parser.add_argument("--limit", type=int, default=None, help="Limit samples per dataset (applies to all datasets except where a specific limit is set).")
+    parser.add_argument("--handwritten-limit", type=int, default=None, help="Override sample limit specifically for the synthetic handwritten dataset (default: 10000). Decoupled from --limit so SVHN is not affected.")
     parser.add_argument(
         "--datasets",
         nargs="+",
@@ -63,7 +63,10 @@ def main():
         race_numbers.prepare(output_dir, limit=args.limit)
 
     if "handwritten" in args.datasets:
-        handwritten.prepare(output_dir, limit=args.limit)
+        # Use --handwritten-limit if provided, else fall back to --limit.
+        # This decouples synthetic generation from the SVHN (and other real) dataset limits.
+        hw_limit = args.handwritten_limit if args.handwritten_limit is not None else args.limit
+        handwritten.prepare(output_dir, limit=hw_limit)
 
 
 

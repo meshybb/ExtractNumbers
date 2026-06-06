@@ -20,6 +20,16 @@ A comprehensive image recognition and segmentation dataset generation pipeline f
    python src/prep_data.py
    ```
 
+
+   **Dataset sizes after preparation:**
+
+   | Dataset | Type | Samples |
+   | :--- | :--- | :---: |
+   | **SVHN / Digits** | Fully Labeled | 33,402 |
+   | **Handwritten** | Fully Labeled (Synthetic) | 10,000 |
+   | **Race Numbers** | Fully Labeled | 30 |
+   | **Trains OCR** | Weakly Labeled | 13 |
+
 ---
 
 ## 📂 Project Structure
@@ -46,7 +56,6 @@ The extraction process is divided into three core stages:
 2.  **Individual Digit Localization (IndividualBB):** Detects and segments each digit individually within the cropped sequence.
 3.  **Neural Character Recognition (Classification):** ResNet18-based classification of localized digits into final values (0-9).
 
-![Process Pipeline](assets/diagram.PNG)
 
 ---
 
@@ -70,9 +79,9 @@ python src/inference/visualize_pipeline.py path/to/image.png -o pipeline_viz.png
 ```
 
 #### Control Flags
-- `--skip-train`: Automatically skips training if valid weights already exist.
 - `--force-train`: Forces a fresh training cycle for both YOLO stages.
-- `--analyze-only`: Skips heavy detection/training and generates reports from previous results.
+- `--force-inference`: Forces re-running of all inference stages even if results already exist.
+- `--analyze-only`: Skips detection/training and generates reports from previous results.
 - `--viz-only`: Regenerates the progression visualizations from existing predictions.
 
 ---
@@ -84,64 +93,69 @@ The pipeline is evaluated across four isolated stages and one comprehensive end-
 ### 🔍 Metric Definitions
 To ensure clarity across all reports, the following metrics are used:
 *   **Mean IoU (Intersection over Union)**: Measures the spatial overlap between the predicted bounding box and the ground truth. A score of 1.0 is a perfect match.
-*   **Detection Rate**: The percentage of samples where the model successfully proposed at least one bounding box.
 *   **mAP@0.5**: "Mean Average Precision" at a 50% IoU threshold. This is the standard accuracy metric for object detection.
 *   **Precision**: The percentage of positive predictions that were actually correct (Quality).
 *   **Recall**: The percentage of actual ground truth objects that were successfully detected (Quantity).
 *   **Full Sequence Accuracy**: The percentage of images where the **entire** predicted number string exactly matches the ground truth.
 *   **Mean Digit Accuracy (Pos)**: The percentage of digits correctly identified at their specific index in the sequence.
-*   **Succession Rate**: The probability that a digit is correct given that the *previous* digit was correct. This measures the model's ability to maintain consistency across a sequence.
 
 ### 📊 Stage 1: Global Bounding Box Detection
 *Evaluates the ability to localize the entire number sequence.*
 
-| Category | Mean IoU | Detection Rate | mAP@0.5 |
-| :--- | :--- | :--- | :--- |
-| **Overall** | **0.7977** | **99.15%** | **94.40%** |
-| **Handwritten** | 0.6670 | 84.48% | 79.31% |
-| **SVHN** | 0.8016 | 99.59% | 94.85% |
+| Category | Mean IoU | Precision | Recall | mAP@0.5 |
+| :--- | :--- | :--- | :--- | :--- |
+| **Overall** | **0.8103** | **96.10%** | **98.92%** | **95.06%** |
+| **Handwritten** | 0.8624 | 98.30% | 97.14% | 95.49% |
+| **SVHN** | 0.7947 | 95.45% | 99.45% | 94.93% |
 
 ### 📊 Stage 2: Individual Digit Localization
 *Evaluates digit segmentation within cropped sequences.*
 
 | Category | Mean IoU | Recall |
 | :--- | :--- | :--- |
-| **Overall** | **0.8409** | **100.00%** |
-| **Handwritten** | 0.8688 | 100.00% |
-| **SVHN** | 0.8401 | 100.00% |
+| **Overall** | **0.8515** | **99.32%** |
+| **Handwritten** | 0.9154 | 99.98% |
+| **SVHN** | 0.8375 | 99.01% |
 
 ### 📊 Stage 3: Digit Classification
 *Isolated classification performance (ResNet18).*
 
 | Category | Accuracy | Support |
 | :--- | :--- | :--- |
-| **Overall** | **98.99%** | **4461 digits** |
-| **Handwritten** | **99.51%** | 205 digits |
-| **SVHN** | **98.97%** | 4256 digits |
+| **Overall** | **94.50%** | **25,120 digits** |
+| **Handwritten** | 92.84% | — |
+| **SVHN** | 95.30% | — |
 
 ### 🏆 Full End-to-End Pipeline Performance
 *Master benchmark: Raw pixels → Final predicted string.*
 
 | Metric | Overall | Handwritten | SVHN |
 | :--- | :--- | :--- | :--- |
-| **Full Sequence Accuracy** | **84.17%** | **69.39%** | **84.54%** |
-| **Mean Digit Accuracy (Pos)**| **91.04%** | **85.99%** | **91.17%** |
-| **Succession Rate** | **95.35%** | **96.70%** | **95.31%** |
-| **Stage 1 Mean IoU** | **0.8046** | **0.7895** | **0.8050** |
-| **Stage 2 Mean IoU** | **0.7355** | **0.7703** | **0.7346** |
+| **Full Sequence Accuracy** | **80.53%** | **72.39%** | **82.94%** |
+| **Mean Digit Accuracy (Pos)**| **89.81%** | **88.24%** | **90.27%** |
+| **Stage 1 Mean IoU** | **0.8147** | **0.8749** | **0.7969** |
+| **Stage 2 Mean IoU** | **0.7646** | **0.8682** | **0.7342** |
+
+*(Sampled proportionally — SVHN ~76.9%, Handwritten ~23.1%. Run with `--balanced` for a fair 50/50 view.)*
 
 ---
 
 
 ### How to Run Evaluations
-The suite is divided into scripts for isolated performance analysis. You can now specify custom data sources for evaluation and choose between proportional stratified sampling (default) or balanced equal-split sampling:
+The suite is divided into scripts for isolated performance analysis. You can specify custom data sources and choose between proportional stratified sampling (default) or balanced equal-split sampling:
+
+**Proportional Sampling (default):** Samples each category proportionally to its size in the dataset.
+
+With `--max-samples 5000` (as used for the results above):
+- SVHN ≈ 3,848 samples (~76.9%)
+- Handwritten ≈ 1,152 samples (~23.1%)
 
 ```bash
 # Run ALL evaluations (Stages 1-3 + Full End-to-End Pipeline) with default proportional sampling
-python src/evaluation/eval_all.py --max-samples 100
+python src/evaluation/eval_all.py --max-samples 5000
 
-# Run ALL evaluations with a perfectly balanced 50/50 split between SVHN and Handwritten
-python src/evaluation/eval_all.py --max-samples 116 --balanced
+# ⭐ RECOMMENDED: Run with perfectly balanced 50/50 split for stable cross-version comparisons
+python src/evaluation/eval_all.py --max-samples 2000 --balanced
 
 # Full End-to-End pipeline benchmark with error analysis dashboard
 python src/evaluation/eval_pipeline.py --max-samples 500 --save-viz --analyze-errors
@@ -156,9 +170,9 @@ The pipeline now supports "Weakly Labeled" datasets—data that contains global 
 | Dataset | Type | Samples | Command to Prepare |
 | :--- | :--- | :---: | :--- |
 | **Trains OCR** | Weakly Labeled | 13 | `python src/data/ocr_trains.py` |
-| **Race Numbers** | Fully Labeled | 10,000+ | `python src/prep_data.py --datasets race_numbers` |
-| **Handwritten** | Fully Labeled | 10,000+ | `python src/prep_data.py --datasets handwritten` |
-| **SVHN / Digits** | Fully Labeled | 200,000+ | `python src/prep_data.py --datasets svhn` |
+| **Race Numbers** | Fully Labeled | 30 | `python src/prep_data.py --datasets race_numbers` |
+| **Handwritten** | Fully Labeled | **10,000** | `python src/prep_data.py --datasets handwritten` |
+| **SVHN / Digits** | Fully Labeled | 33,402 | `python src/prep_data.py --datasets svhn` |
 
 ### Handling Weakly Labeled Data
 When a dataset is identified as weakly labeled (`has_digit_boxes=False` in `annotations.json`):
@@ -166,40 +180,23 @@ When a dataset is identified as weakly labeled (`has_digit_boxes=False` in `anno
 2.  **Stage 2 (Individual Detection)**: Skipped for metric calculation to avoid statistical contamination.
 3.  **End-to-End Accuracy**: Calculated by comparing the final OCR output with the ground truth sequence label.
 
-### Pipeline Progression
+### Pipeline Example
 
-![Full Pipeline Dashboard](assets/full_pipeline_progression.png)
+End-to-end extraction on a real handwritten sample — from noisy source image to final predicted digit sequence:
 
-### Error Analysis
-Detailed breakdown of how the model succeeds or fails at each individual step:
-![Detailed Error Analysis](assets/detailed_error_analysis.png)
-
-
+![Pipeline Example](assets/pipeline_example_hw.png)
 
 ---
 
-## 🎬 Video Asset Generation
+## 🖼️ Generate a Pipeline Visualization
 
-Runs the full 4-stage pipeline on **9 representative images** — 3 randomly selected from each data type (SVHN, Race Numbers, Handwritten) — and saves the per-stage visual output for use in a demo video.
+To produce a 4-stage visual walkthrough (Original → Global Detection → Crop → Individual Detection with labels) for any image:
 
 ```bash
-python src/generate_video_assets.py \
-    --model-dir outputs/trained_models \
-    --data-root data/digits_data \
-    --out-dir   video_assets
+# On a specific image
+python src/inference/visualize_pipeline.py path/to/image.png -o output.png
+
+# On a randomly selected image from the dataset
+python src/inference/visualize_pipeline.py random -o output.png
 ```
 
-This produces the folder `video_assets/` with one sub-folder per pipeline stage:
-
-| Folder | Contents |
-| :--- | :--- |
-| `01_samples/` | 9 raw input images (3 per data type) |
-| `02_global_bb/` | Each image with the GlobalBB rectangle drawn |
-| `03_sharpened/` | Real-ESRGAN enhanced crop |
-| `04_individual_bb/` | Sharpened crop with per-digit boxes |
-| `05_classification/` | Digit labels overlaid + predicted number banner |
-
-> **Note:** Statistics and accuracy metrics are not computed by this script.
-> Use the evaluation suite (`src/evaluation/`) for benchmarking.
-
----

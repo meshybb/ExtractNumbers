@@ -19,9 +19,24 @@ def run_script(script_name, args=[]):
 
 def main():
     import argparse
-    parser = argparse.ArgumentParser(description="Run all evaluation stages")
+    parser = argparse.ArgumentParser(
+        description="Run all evaluation stages",
+        epilog=(
+            "NOTE (Stage 5 Dataset Expansion): After the handwritten dataset was expanded from 1,000 to 10,000 "
+            "samples, the proportional distribution shifted from 33:1 (SVHN:Handwritten) to 3.3:1. "
+            "This means the 'Overall' metric under proportional sampling now includes ~8x more handwritten samples "
+            "than before. Use --balanced for stable, cross-version comparisons."
+        )
+    )
     parser.add_argument("--max-samples", type=int, default=100, help="Max samples for each stage")
-    parser.add_argument("--balanced", action="store_true", help="Use equal/balanced split for categories")
+    parser.add_argument(
+        "--balanced",
+        action="store_true",
+        help=(
+            "Use equal/balanced split for categories (recommended for cross-version comparisons). "
+            "Ensures a fair 50/50 SVHN vs Handwritten evaluation regardless of dataset folder sizes."
+        )
+    )
     args = parser.parse_args()
 
     extra_args = ["--balanced"] if args.balanced else []
@@ -43,6 +58,7 @@ def main():
     print(f"✅ EVALUATION COMPLETE: {success_count}/{len(stages)} stages succeeded")
     print(f"{'='*60}")
     print(f"Reports are available in: {os.path.join(BASE_DIR, 'outputs', 'reports')}")
+    print(f"\n💡 TIP: Re-run with --balanced for a fair 50/50 SVHN vs Handwritten comparison.")
 
 if __name__ == "__main__":
     main()
