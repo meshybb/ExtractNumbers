@@ -1,0 +1,12 @@
+[
+  {
+    "frame": 1044,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1044/stage_01_raw.png"
+    }
+  }
+]

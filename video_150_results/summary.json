@@ -1,0 +1,2090 @@
+[
+  {
+    "frame": 4,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0004/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 11,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0011/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 26,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0026/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 34,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0034/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 41,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0041/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 53,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0053/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 65,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0065/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 71,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0071/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 88,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0088/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 99,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0099/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 107,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0107/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 118,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0118/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 124,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0124/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 131,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0131/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 142,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0142/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 153,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0153/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 169,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0169/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 174,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0174/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 181,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0181/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 198,
+    "status": "ok",
+    "prediction": "9",
+    "global_conf": 0.5551467537879944,
+    "n_individuals": 1,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0198/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0198/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0198/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0198/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0198/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 209,
+    "status": "ok",
+    "prediction": "9",
+    "global_conf": 0.5763999819755554,
+    "n_individuals": 1,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0209/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0209/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0209/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0209/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0209/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 215,
+    "status": "ok",
+    "prediction": "9",
+    "global_conf": 0.5882033705711365,
+    "n_individuals": 1,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0215/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0215/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0215/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0215/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0215/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 222,
+    "status": "ok",
+    "prediction": "9",
+    "global_conf": 0.5682784914970398,
+    "n_individuals": 1,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0222/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0222/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0222/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0222/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0222/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 230,
+    "status": "ok",
+    "prediction": "9",
+    "global_conf": 0.5569366216659546,
+    "n_individuals": 1,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0230/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0230/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0230/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0230/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0230/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 245,
+    "status": "ok",
+    "prediction": "9",
+    "global_conf": 0.5298870205879211,
+    "n_individuals": 1,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0245/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0245/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0245/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0245/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0245/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 251,
+    "status": "ok",
+    "prediction": "9",
+    "global_conf": 0.5299108028411865,
+    "n_individuals": 1,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0251/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0251/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0251/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0251/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0251/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 266,
+    "status": "ok",
+    "prediction": "9",
+    "global_conf": 0.5370604991912842,
+    "n_individuals": 1,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0266/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0266/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0266/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0266/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0266/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 271,
+    "status": "ok",
+    "prediction": "9",
+    "global_conf": 0.5272701382637024,
+    "n_individuals": 1,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0271/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0271/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0271/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0271/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0271/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 288,
+    "status": "ok",
+    "prediction": "5409",
+    "global_conf": 0.603026270866394,
+    "n_individuals": 4,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0288/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0288/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0288/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0288/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0288/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 297,
+    "status": "ok",
+    "prediction": "5409",
+    "global_conf": 0.6032252907752991,
+    "n_individuals": 4,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0297/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0297/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0297/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0297/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0297/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 306,
+    "status": "ok",
+    "prediction": "5409",
+    "global_conf": 0.5991541147232056,
+    "n_individuals": 4,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0306/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0306/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0306/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0306/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0306/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 319,
+    "status": "ok",
+    "prediction": "5409",
+    "global_conf": 0.591499388217926,
+    "n_individuals": 4,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0319/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0319/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0319/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0319/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0319/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 327,
+    "status": "ok",
+    "prediction": "5409",
+    "global_conf": 0.5891873836517334,
+    "n_individuals": 4,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0327/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0327/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0327/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0327/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0327/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 335,
+    "status": "ok",
+    "prediction": "54102",
+    "global_conf": 0.6119316816329956,
+    "n_individuals": 5,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0335/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0335/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0335/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0335/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0335/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 347,
+    "status": "ok",
+    "prediction": "54102",
+    "global_conf": 0.6120016574859619,
+    "n_individuals": 5,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0347/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0347/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0347/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0347/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0347/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 357,
+    "status": "ok",
+    "prediction": "86199",
+    "global_conf": 0.3043110966682434,
+    "n_individuals": 5,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0357/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0357/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0357/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0357/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0357/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 364,
+    "status": "ok",
+    "prediction": "69999",
+    "global_conf": 0.2613997757434845,
+    "n_individuals": 5,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0364/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0364/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0364/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0364/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0364/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 370,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0370/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 383,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0383/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 398,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0398/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 406,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0406/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 416,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0416/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 420,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0420/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 435,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0435/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 441,
+    "status": "ok",
+    "prediction": "89191",
+    "global_conf": 0.34881457686424255,
+    "n_individuals": 5,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0441/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0441/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0441/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0441/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0441/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 455,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0455/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 461,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0461/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 470,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0470/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 486,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0486/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 495,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0495/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 504,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0504/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 512,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0512/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 527,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0527/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 539,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0539/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 542,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0542/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 555,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0555/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 568,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0568/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 576,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0576/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 587,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0587/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 590,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0590/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 602,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0602/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 611,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0611/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 620,
+    "status": "ok",
+    "prediction": "99999",
+    "global_conf": 0.26095521450042725,
+    "n_individuals": 5,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0620/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0620/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0620/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0620/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0620/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 635,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0635/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 648,
+    "status": "ok",
+    "prediction": "990",
+    "global_conf": 0.26822522282600403,
+    "n_individuals": 3,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0648/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0648/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0648/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0648/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0648/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 652,
+    "status": "ok",
+    "prediction": "990",
+    "global_conf": 0.37912270426750183,
+    "n_individuals": 3,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0652/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0652/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0652/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0652/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0652/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 662,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0662/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 677,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0677/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 689,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0689/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 699,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0699/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 702,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0702/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 712,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0712/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 728,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0728/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 739,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0739/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 744,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0744/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 750,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0750/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 768,
+    "status": "ok",
+    "prediction": "990",
+    "global_conf": 0.2823544442653656,
+    "n_individuals": 3,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0768/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0768/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0768/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0768/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0768/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 779,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0779/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 783,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0783/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 793,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0793/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 802,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0802/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 818,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0818/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 822,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0822/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 839,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0839/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 844,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0844/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 855,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0855/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 865,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0865/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 874,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0874/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 881,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0881/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 896,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0896/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 900,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0900/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 911,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0911/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 928,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0928/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 934,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0934/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 949,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0949/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 958,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0958/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 966,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0966/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 976,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0976/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 983,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0983/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 993,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_0993/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1004,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1004/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1010,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1010/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1023,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1023/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1036,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1036/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1044,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1044/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1056,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1056/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1061,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1061/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1079,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1079/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1085,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1085/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1093,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1093/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1109,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1109/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1112,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1112/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1120,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1120/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1135,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1135/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1143,
+    "status": "ok",
+    "prediction": "11",
+    "global_conf": 0.2522469460964203,
+    "n_individuals": 2,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1143/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1143/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1143/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1143/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1143/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1151,
+    "status": "ok",
+    "prediction": "11",
+    "global_conf": 0.2899908423423767,
+    "n_individuals": 2,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1151/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1151/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1151/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1151/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1151/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1165,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1165/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1179,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1179/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1189,
+    "status": "ok",
+    "prediction": "9999",
+    "global_conf": 0.36258602142333984,
+    "n_individuals": 4,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1189/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1189/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1189/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1189/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1189/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1194,
+    "status": "ok",
+    "prediction": "999",
+    "global_conf": 0.5484433174133301,
+    "n_individuals": 3,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1194/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1194/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1194/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1194/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1194/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1202,
+    "status": "ok",
+    "prediction": "49",
+    "global_conf": 0.4037044048309326,
+    "n_individuals": 2,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1202/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1202/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1202/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1202/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1202/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1216,
+    "status": "ok",
+    "prediction": "9199",
+    "global_conf": 0.5203120708465576,
+    "n_individuals": 4,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1216/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1216/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1216/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1216/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1216/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1221,
+    "status": "ok",
+    "prediction": "992",
+    "global_conf": 0.5293054580688477,
+    "n_individuals": 3,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1221/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1221/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1221/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1221/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1221/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1230,
+    "status": "ok",
+    "prediction": "952",
+    "global_conf": 0.5346288681030273,
+    "n_individuals": 3,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1230/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1230/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1230/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1230/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1230/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1243,
+    "status": "ok",
+    "prediction": "999",
+    "global_conf": 0.45194828510284424,
+    "n_individuals": 3,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1243/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1243/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1243/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1243/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1243/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1253,
+    "status": "ok",
+    "prediction": "949",
+    "global_conf": 0.412708044052124,
+    "n_individuals": 3,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1253/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1253/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1253/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1253/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1253/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1268,
+    "status": "ok",
+    "prediction": "992",
+    "global_conf": 0.4771886467933655,
+    "n_individuals": 3,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1268/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1268/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1268/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1268/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1268/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1278,
+    "status": "ok",
+    "prediction": "992",
+    "global_conf": 0.49126309156417847,
+    "n_individuals": 3,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1278/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1278/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1278/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1278/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1278/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1287,
+    "status": "ok",
+    "prediction": "9992",
+    "global_conf": 0.5440362691879272,
+    "n_individuals": 4,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1287/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1287/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1287/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1287/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1287/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1291,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1291/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1305,
+    "status": "ok",
+    "prediction": "993",
+    "global_conf": 0.4275906980037689,
+    "n_individuals": 3,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1305/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1305/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1305/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1305/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1305/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1311,
+    "status": "ok",
+    "prediction": "993",
+    "global_conf": 0.46050357818603516,
+    "n_individuals": 3,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1311/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1311/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1311/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1311/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1311/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1328,
+    "status": "ok",
+    "prediction": "2",
+    "global_conf": 0.4666895270347595,
+    "n_individuals": 1,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1328/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1328/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1328/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1328/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1328/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1338,
+    "status": "ok",
+    "prediction": "69",
+    "global_conf": 0.2667427062988281,
+    "n_individuals": 2,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1338/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1338/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1338/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1338/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1338/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1346,
+    "status": "ok",
+    "prediction": "159",
+    "global_conf": 0.4822332561016083,
+    "n_individuals": 3,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1346/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1346/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1346/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1346/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1346/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1353,
+    "status": "ok",
+    "prediction": "8241",
+    "global_conf": 0.3560881018638611,
+    "n_individuals": 4,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1353/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1353/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1353/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1353/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1353/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1369,
+    "status": "ok",
+    "prediction": "8241",
+    "global_conf": 0.26042836904525757,
+    "n_individuals": 4,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1369/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1369/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1369/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1369/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1369/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1374,
+    "status": "ok",
+    "prediction": "8241",
+    "global_conf": 0.2643975615501404,
+    "n_individuals": 4,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1374/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1374/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1374/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1374/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1374/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1381,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1381/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1398,
+    "status": "ok",
+    "prediction": "8241",
+    "global_conf": 0.2580719590187073,
+    "n_individuals": 4,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1398/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1398/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1398/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1398/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1398/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1405,
+    "status": "ok",
+    "prediction": "1991",
+    "global_conf": 0.39231494069099426,
+    "n_individuals": 4,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1405/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1405/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1405/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1405/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1405/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1411,
+    "status": "ok",
+    "prediction": "191",
+    "global_conf": 0.4843166172504425,
+    "n_individuals": 3,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1411/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1411/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1411/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1411/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1411/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1421,
+    "status": "ok",
+    "prediction": "164491",
+    "global_conf": 0.5397142171859741,
+    "n_individuals": 6,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1421/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1421/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1421/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1421/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1421/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1438,
+    "status": "ok",
+    "prediction": "6671",
+    "global_conf": 0.2947576344013214,
+    "n_individuals": 4,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1438/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1438/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1438/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1438/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1438/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1444,
+    "status": "ok",
+    "prediction": "05",
+    "global_conf": 0.2556166350841522,
+    "n_individuals": 2,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1444/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1444/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1444/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1444/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1444/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1458,
+    "status": "ok",
+    "prediction": "2",
+    "global_conf": 0.42323583364486694,
+    "n_individuals": 1,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1458/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1458/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1458/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1458/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1458/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1464,
+    "status": "ok",
+    "prediction": "166",
+    "global_conf": 0.25438958406448364,
+    "n_individuals": 3,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1464/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1464/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1464/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1464/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1464/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1473,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1473/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1480,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1480/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1491,
+    "status": "ok",
+    "prediction": "199617",
+    "global_conf": 0.30895113945007324,
+    "n_individuals": 6,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1491/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1491/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1491/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1491/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1491/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1506,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1506/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1510,
+    "status": "ok",
+    "prediction": "61",
+    "global_conf": 0.4049201011657715,
+    "n_individuals": 2,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1510/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1510/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1510/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1510/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1510/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1523,
+    "status": "ok",
+    "prediction": "1",
+    "global_conf": 0.4391459822654724,
+    "n_individuals": 1,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1523/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1523/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1523/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1523/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1523/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1532,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1532/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1545,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1545/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1550,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1550/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1560,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1560/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1576,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1576/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1582,
+    "status": "ok",
+    "prediction": "1",
+    "global_conf": 0.28756576776504517,
+    "n_individuals": 1,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1582/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1582/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1582/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1582/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1582/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1591,
+    "status": "ok",
+    "prediction": "19",
+    "global_conf": 0.2752050459384918,
+    "n_individuals": 2,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1591/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1591/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1591/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1591/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1591/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1607,
+    "status": "ok",
+    "prediction": "11",
+    "global_conf": 0.3803183436393738,
+    "n_individuals": 2,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1607/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1607/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1607/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1607/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1607/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1612,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1612/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1623,
+    "status": "ok",
+    "prediction": "1",
+    "global_conf": 0.3340691924095154,
+    "n_individuals": 1,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1623/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1623/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1623/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1623/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1623/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1634,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1634/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1649,
+    "status": "ok",
+    "prediction": "691",
+    "global_conf": 0.3182995915412903,
+    "n_individuals": 3,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1649/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1649/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1649/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1649/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1649/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1652,
+    "status": "ok",
+    "prediction": "691",
+    "global_conf": 0.3212241530418396,
+    "n_individuals": 3,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1652/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1652/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1652/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1652/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1652/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1666,
+    "status": "ok",
+    "prediction": "1",
+    "global_conf": 0.32528194785118103,
+    "n_individuals": 1,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1666/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1666/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1666/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1666/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1666/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1671,
+    "status": "ok",
+    "prediction": "1",
+    "global_conf": 0.32655754685401917,
+    "n_individuals": 1,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1671/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1671/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1671/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1671/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1671/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1684,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1684/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1691,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1691/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1703,
+    "status": "no-global",
+    "prediction": "",
+    "global_conf": null,
+    "n_individuals": 0,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1703/stage_01_raw.png"
+    }
+  },
+  {
+    "frame": 1719,
+    "status": "ok",
+    "prediction": "62656421",
+    "global_conf": 0.33384883403778076,
+    "n_individuals": 8,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1719/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1719/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1719/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1719/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1719/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1725,
+    "status": "ok",
+    "prediction": "6566771",
+    "global_conf": 0.34303146600723267,
+    "n_individuals": 7,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1725/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1725/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1725/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1725/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1725/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1733,
+    "status": "ok",
+    "prediction": "9656421",
+    "global_conf": 0.302533894777298,
+    "n_individuals": 7,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1733/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1733/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1733/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1733/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1733/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1745,
+    "status": "ok",
+    "prediction": "96",
+    "global_conf": 0.47024285793304443,
+    "n_individuals": 2,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1745/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1745/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1745/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1745/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1745/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1754,
+    "status": "ok",
+    "prediction": "0",
+    "global_conf": 0.4927348494529724,
+    "n_individuals": 1,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1754/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1754/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1754/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1754/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1754/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1766,
+    "status": "ok",
+    "prediction": "996",
+    "global_conf": 0.5764391422271729,
+    "n_individuals": 3,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1766/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1766/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1766/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1766/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1766/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1775,
+    "status": "ok",
+    "prediction": "9",
+    "global_conf": 0.5560409426689148,
+    "n_individuals": 1,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1775/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1775/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1775/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1775/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1775/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1780,
+    "status": "ok",
+    "prediction": "0",
+    "global_conf": 0.6509168148040771,
+    "n_individuals": 1,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1780/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1780/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1780/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1780/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1780/stage_05_classification.png"
+    }
+  },
+  {
+    "frame": 1790,
+    "status": "ok",
+    "prediction": "0",
+    "global_conf": 0.6120237708091736,
+    "n_individuals": 1,
+    "paths": {
+      "stage_01_raw": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1790/stage_01_raw.png",
+      "stage_02_globalbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1790/stage_02_globalbb.png",
+      "stage_03_sharpened": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1790/stage_03_sharpened.png",
+      "stage_04_individualbb": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1790/stage_04_individualbb.png",
+      "stage_05_classification": "/home/dsi/halamim1/ExtractNumbers/outputs/video_150_results/frame_1790/stage_05_classification.png"
+    }
+  }
+]

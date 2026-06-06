@@ -38,3 +38,4 @@ pycryptodomex
 mysql-connector-python
 ultralytics
 dotenv
+pytest
