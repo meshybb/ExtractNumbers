@@ -4,7 +4,7 @@ Comprehensive benchmarking for every stage of the extraction pipeline.
 
 ---
 
-## 📂 Evaluation Stages
+## 📂 Image Evaluation Stages
 
 ### Stage 1: Global Bounding Box (`eval_global_bbox.py`)
 **Purpose**: Evaluate the model's ability to localize the entire number sequence.
@@ -33,6 +33,26 @@ Comprehensive benchmarking for every stage of the extraction pipeline.
 
 ---
 
+## 📂 Video Evaluation Stages
+
+### Stage 1: Video Global Bounding Box (`eval_video_global_bbox.py`)
+**Purpose**: Benchmark YOLO global localization accuracy frame-by-frame on video files.
+**Metrics**: mAP@0.5, Precision, Recall, Mean IoU.
+
+### Stage 3: Video Individual Bounding Box (`eval_video_individual_bbox.py`)
+**Purpose**: Benchmark individual digit detection inside sequence crops across video frames.
+**Metrics**: Precision, Recall, Mean IoU.
+
+### Stage 4: Video Digit Recognition (`eval_video_digit_recog.py`)
+**Purpose**: Benchmark ResNet18 digit classification on frame crops.
+**Metrics**: Classification Accuracy, Precision, Recall, F1-score.
+
+### End-to-End Video Pipeline (`eval_video_pipeline.py`)
+**Purpose**: Benchmark the complete staged video pipeline (from raw frames to sequence text output) with support for both fully labeled and weakly labeled frame annotations.
+**Metrics**: Full Sequence Accuracy, Mean Digit Accuracy, Stage 1 Mean IoU, Stage 3 Mean IoU, succession rate.
+
+---
+
 ## 🚀 End-to-End Pipeline Evaluation (`eval_pipeline.py`)
 
 The master benchmark that tests the full sequence from raw pixels to final string.
@@ -45,7 +65,29 @@ Measures the percentage of correctly identified digits at each position across t
 #### 2. Single Digit Succession Rate
 **New Metric**: Measures the conditional probability that a digit is correctly identified given that the *previous* digit in the sequence was correct.
 - **Formula**: $P(D_{i+1} \text{ correct} | D_i \text{ correct})$
-- **Significance**: High succession rates indicate that the model maintains positional consistency. Low rates suggest that a single error (like a shift in the bounding box) tends to cascade through the rest of the sequence.
+- **Significance**: High succession rates indicate that the model maintains positional consistency. Low rates suggest that a single error (like a shift in the bounding box) cascades through the rest of the sequence.
+
+---
+
+## 💻 Running Evaluations
+
+### Run all Image Evaluations
+```bash
+# Proportional sampling (default)
+python src/evaluation/eval_all.py --max-samples 1000
+
+# Balanced 50/50 split
+python src/evaluation/eval_all.py --max-samples 1000 --balanced
+```
+
+### Run all Video Evaluations
+```bash
+# Evaluate exactly the annotated frames
+python src/evaluation/eval_video_all.py --max-samples 10 --strategy annotated
+
+# Evaluate using frame selection strategies (uniform, motion_and_blur, random_1_in_10)
+python src/evaluation/eval_video_all.py --max-samples 10 --strategy uniform
+```
 
 ---
 
@@ -65,14 +107,14 @@ def setup():
 
 # 2. Main Evaluation Loop
 def evaluate():
-    # Iterate through data/digits_data/
+    # Iterate through data/digits_data/ or data/video_data/
     # Run inference
     # Calculate metrics (IoU, Accuracy, etc.)
     pass
 
 # 3. Aggregation & Reporting
 def report(results_df):
-    # Group by category (Handwritten, Natural, Synthetic)
+    # Group by category
     # Print summary table
     # Save to outputs/reports/
     pass
@@ -81,3 +123,4 @@ if __name__ == "__main__":
     setup()
     evaluate()
 ```
+

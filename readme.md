@@ -156,30 +156,54 @@ To ensure clarity across all reports, the following metrics are used:
 
 *(Sampled proportionally — SVHN ~76.9%, Handwritten ~23.1%. Run with `--balanced` for a fair 50/50 view.)*
 
+### 📊 Video Evaluation Suite (Real-World Benchmarks)
+*Evaluates the staged pipeline performance on real-world video datasets.*
+
+| Category | Seq Acc | Digit Acc | Stage 1 (Global) IoU | Stage 3 (Indiv) IoU | Labeled Frames |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **Overall** | **0.40%** | **0.71%** | **0.0195** | **0.0207** | **2,097** |
+| **`bovtext`** | 0.00% | 0.00% | 0.0000 | 0.0000 | 10 |
+| **`roadtext`** | 0.00% | 0.21% | 0.0002 | 0.0004 | 1,065 |
+| **`dstext_v2`** | 0.00% | 0.25% | 0.0021 | 0.0009 | 886 |
+| **`moving_mnist`** | 0.00% | 0.00% | 0.6242 | 0.5732 | 60 |
+| **`mock_video`** | 100.00% | 100.00% | 0.8253 | 0.6669 | 10 |
+| **`icdar_svt`** | 0.00% | 0.00% | 0.0000 | 0.0000 | 10 |
+
+> [!WARNING]
+> There is a severe **scale and domain mismatch** in Stage 1 global sequence localization on high-resolution videos (e.g., `dstext_v2`, `roadtext`). The model was trained on cropped sequences where numbers occupy a massive portion of the frame, failing completely when sequence boundaries occupy less than 0.005% of full-sized video frames.
+
 ---
 
 
 ### How to Run Evaluations
-The suite is divided into scripts for isolated performance analysis. You can specify custom data sources and choose between proportional stratified sampling (default) or balanced equal-split sampling:
+The suite is divided into scripts for isolated performance analysis across both image and video datasets.
 
-**Proportional Sampling (default):** Samples each category proportionally to its size in the dataset.
-
-With `--max-samples 5000` (as used for the results above):
-- SVHN ≈ 3,848 samples (~76.9%)
-- Handwritten ≈ 1,152 samples (~23.1%)
+#### 🖼️ Image Evaluations
+You can choose between proportional stratified sampling (default) or balanced equal-split sampling:
 
 ```bash
-# Run ALL evaluations (Stages 1-3 + Full End-to-End Pipeline) with default proportional sampling
+# Run ALL image evaluations with default proportional sampling
 python src/evaluation/eval_all.py --max-samples 5000
 
 # ⭐ RECOMMENDED: Run with perfectly balanced 50/50 split for stable cross-version comparisons
 python src/evaluation/eval_all.py --max-samples 2000 --balanced
 
-# Full End-to-End pipeline benchmark with error analysis dashboard
+# Full End-to-End image pipeline benchmark with error analysis dashboard
 python src/evaluation/eval_pipeline.py --max-samples 500 --save-viz --analyze-errors
+```
 
-# Evaluate on custom datasets (e.g., the Trains OCR dataset)
-python src/evaluation/eval_pipeline.py --data-root data/ocr_trains --output-dir outputs/trains_eval
+#### 🎥 Video Evaluations
+Evaluate frame-by-frame processing of videos. The suite supports evaluating exactly the labeled frames or running frame selectors:
+
+```bash
+# Run ALL video evaluations on exactly the annotated frames
+python src/evaluation/eval_video_all.py --max-samples 10 --strategy annotated
+
+# Run video evaluations with uniform selection strategy
+python src/evaluation/eval_video_all.py --max-samples 10 --strategy uniform --k 5
+
+# Run end-to-end video pipeline benchmark only
+python src/evaluation/eval_video_pipeline.py --max-samples 5 --save-viz --analyze-errors
 ```
 
 ## 📊 Dataset Integration
@@ -191,6 +215,11 @@ The pipeline now supports "Weakly Labeled" datasets—data that contains global 
 | **Race Numbers** | Fully Labeled | 30 | `python src/prep_data.py --datasets race_numbers` |
 | **Handwritten** | Fully Labeled | **10,000** | `python src/prep_data.py --datasets handwritten` |
 | **SVHN / Digits** | Fully Labeled | 33,402 | `python src/prep_data.py --datasets svhn` |
+| **Moving MNIST** | Video Dataset | 5 sequences | `python src/prep_data.py --datasets moving_mnist` |
+| **DSText V2** | Video Dataset | 2 sequences | `python src/prep_data.py --datasets dstext_v2` |
+| **RoadText** | Video Dataset | 2 sequences | `python src/prep_data.py --datasets roadtext` |
+| **BOVText** | Video Dataset | 2 sequences | `python src/prep_data.py --datasets bovtext` |
+| **ICDAR SVT** | Video Dataset | 2 sequences | `python src/prep_data.py --datasets icdar_svt` |
 
 ### Handling Weakly Labeled Data
 When a dataset is identified as weakly labeled (`has_digit_boxes=False` in `annotations.json`):
