@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 # Ensure we can import the data loaders from the local directory
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-from data import svhn, race_numbers, handwritten, ocr_trains
+from data import svhn, race_numbers, handwritten, ocr_trains, download_icdar_svt, download_dstext_v2, download_bovtext, download_moving_mnist, download_roadtext
 
 def _safe_rmtree(path, base_dir, label):
     """Remove *path* only when it is a real directory inside *base_dir*."""
