@@ -1,13 +1,12 @@
 #!/bin/bash
 #SBATCH --job-name=extract_numbers
-#SBATCH --output=/home/dsi/baruchm9/ExtractNumbers/slurm_logs/pipeline_%j.out
-#SBATCH --error=/home/dsi/baruchm9/ExtractNumbers/slurm_logs/pipeline_%j.err
+#SBATCH --output=slurm_logs/pipeline_%j.out
+#SBATCH --error=slurm_logs/pipeline_%j.err
 #SBATCH --partition=L4-12h       # Partition name
 #SBATCH --gres=gpu:1             # Request 1 GPU
 #SBATCH --cpus-per-task=4        # Request 4 CPU cores
 #SBATCH --mem=16G                # Request 16GB of RAM
 #SBATCH --time=12:00:00          # Time limit (hh:mm:ss)
-#SBATCH --mail-user=meshybb@gmail.com
 #SBATCH --mail-type=BEGIN,END,FAIL
 
 # ==============================================================================
@@ -20,7 +19,8 @@
 echo "Starting pipeline job on $(hostname) at $(date)"
 
 # Navigate to the project root
-cd /home/dsi/baruchm9/ExtractNumbers
+cd "$SLURM_SUBMIT_DIR"
+mkdir -p slurm_logs
 
 # Activate the Python virtual environment
 source .venv/bin/activate

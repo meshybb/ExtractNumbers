@@ -1,12 +1,11 @@
 #!/bin/bash
 #SBATCH --job-name=eval_all
-#SBATCH --output=/home/dsi/baruchm9/ExtractNumbers/slurm_logs/eval_all_%j.out
-#SBATCH --error=/home/dsi/baruchm9/ExtractNumbers/slurm_logs/eval_all_%j.err
+#SBATCH --output=slurm_logs/eval_all_%j.out
+#SBATCH --error=slurm_logs/eval_all_%j.err
 #SBATCH --partition=L4-4h        # Partition name
 #SBATCH --cpus-per-task=4        # Request 4 CPU cores
 #SBATCH --mem=16G                # Request 16GB of RAM
 #SBATCH --time=02:00:00          # Time limit (hh:mm:ss)
-#SBATCH --mail-user=meshybb@gmail.com
 #SBATCH --mail-type=BEGIN,END,FAIL
 
 # ======================================================================
@@ -19,7 +18,8 @@ set -e
 
 echo "Starting evaluation job on $(hostname) at $(date)"
 
-cd /home/dsi/baruchm9/ExtractNumbers
+cd "$SLURM_SUBMIT_DIR"
+mkdir -p slurm_logs
 source .venv/bin/activate
 
 # Optional: pass a maximum sample count via SBATCH --export or environment
